@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `carts`
 --
 CREATE  TABLE IF NOT EXISTS `beerdb`.`carts` (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(191) NOT NULL,
   `description` text NOT NULL,
   `price` decimal(6,2) NOT NULL,
@@ -66,7 +66,7 @@ INSERT INTO `beerdb`.`carts` (`id`, `name`, `description`, `price`, `beer_img`, 
 --
 
 CREATE  TABLE IF NOT EXISTS `beerdb`.`migrations` (
-  `id` bigint(20) UNSIGNED NOT NULL ,
+  `id` int(10) UNSIGNED NOT NULL ,
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -86,9 +86,9 @@ INSERT INTO `beerdb`.`migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE  TABLE IF NOT EXISTS `beerdb`.`orders` (
-  `id` bigint(20) NOT NULL,
-  `user_id` bigint(20) DEFAULT NULL,
-  `product_id` bigint(20) DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
   `date` varchar(45) DEFAULT NULL,
   `product` varchar(45) DEFAULT NULL,
   `quantity` smallint(6) DEFAULT NULL,
@@ -115,7 +115,7 @@ CREATE  TABLE IF NOT EXISTS `beerdb`.`password_resets` (
 --
 
 CREATE  TABLE IF NOT EXISTS `beerdb`.`presentation` (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `measure` mediumint(9) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -126,7 +126,7 @@ CREATE  TABLE IF NOT EXISTS `beerdb`.`presentation` (
 --
 
 CREATE  TABLE IF NOT EXISTS `beerdb`.`styles` (
-  `id` bigint(20) NOT NULL,
+  `id` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
   `description` varchar(45) DEFAULT NULL,
   `image` varchar(45) DEFAULT NULL
@@ -169,7 +169,7 @@ INSERT INTO `beerdb`.`users` (`id`, `name`, `lastName`, `email`, `gender`, `pass
 --
 
 CREATE  TABLE IF NOT EXISTS `beerdb`.`products` (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(191) NOT NULL,
   `description` text NOT NULL,
   `price` decimal(6,2) NOT NULL,
@@ -267,37 +267,37 @@ ALTER TABLE `beerdb`.`usuarios`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `beerdb`.`migrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `beerdb`.`orders`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `presentation`
 --
---ALTER TABLE `beerdb`.`presentation`
---MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `beerdb`.`presentation`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `styles`
 --
 ALTER TABLE `beerdb`.`styles`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `beerdb`.`users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `beerdb`.`usuarios`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables

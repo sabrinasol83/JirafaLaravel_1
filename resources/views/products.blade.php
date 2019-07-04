@@ -19,7 +19,7 @@
         <h2>{{$product->name}}</h2>
         <p>{{$product->description}}</p>
         <p>{{$product->price}}</p>
-        <p><img src="/storage/app/public/product/{{$product->id}}" alt="cerveza"></p>
+        <p><img src="/storage/app/public/product/{{$product->beer_img}}" alt="cerveza"></p>
         <a href="/product/{{$product->id}}">Ver más</a>
       </article>
       @endforeach
