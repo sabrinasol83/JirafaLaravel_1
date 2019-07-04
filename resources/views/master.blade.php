@@ -21,28 +21,23 @@
 <body>
   <header class="nav-header">
       <input type="checkbox" id="abrir-cerrar" name="abrir-cerrar" value="">
-      <label for="abrir-cerrar"><a href="/" class="btn-home"><i class="fa fa-home"></i></a><span class="abrir">&#9776;</span><span class="cerrar">&#9776; Cerrar</span></label>
-      <div id="sidebar" class="sidebar">
+      <label for="abrir-cerrar"><a href="/" class="btn-home">LOGIN</a><span class="abrir">&#9776;</span><span class="cerrar">X</span></label>
+      
         <div id="sidebar" class="sidebar">
             <ul class="menu">
               <li><a href="/">home</a></li>
               <li><a href="/#section-nosotros">nosotros</a></li>
               <li><a href="/#section-estilos">estilos</a></li>
               <li><a href="/products">productos</a></li>
-              <li><a href="/cart">carrito</a></li>
-              <li><a href="/history">Mis compras</a></li>
-
-            </ul>
-        </div>
-      </div>
-      <!--Nota: falta modificar CSS del div y/o ul del login y register-->
-      <div class="nav-header">
-        <ul>
-          <!-- Authentication Links -->
-          @if (Auth::guest())
-              <li><a href="{{ route('login') }}">Login</a></li>
-              <li><a href="{{ route('register') }}">Register</a></li>
-          @else
+              @if (!Auth::guest())
+                <li><a href="/cart">carrito</a></li>
+                <li><a href="/history">Mis compras</a></li>
+              @endif
+							<!-- Authentication Links -->
+							@if (Auth::guest())
+              	<li><a class="itemNav" href="{{ route('login') }}">Login</a></li>
+              	<li><a class="itemNav" href="{{ route('register') }}">Register</a></li>
+         			 @else
               <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                       {{ Auth::user()->name }} <span class="caret"></span>
@@ -63,6 +58,13 @@
                   </ul>
               </li>
           @endif
+            </ul>
+        </div>
+      
+      <!--Nota: falta modificar CSS del div y/o ul del login y register-->
+      <div class="nav-header">
+        <ul class="authNav">
+          
         </ul>
       </div>
 
