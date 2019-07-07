@@ -9,4 +9,9 @@ class Product extends Model
 {
     use SoftDeletes;
     protected $guarded = [];
+
+    public function categories()
+    {
+        return $this->belongsToMany('App\Category');
+    }
 }
