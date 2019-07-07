@@ -52,7 +52,8 @@ header {
 }
 
 .btn-home:hover {
-    background-color: #ffbb37;
+    color: #fff;
+    background-color: #f90;
 }
 input#abrir-cerrar {
     visibility: hidden;
@@ -164,6 +165,27 @@ input#abrir-cerrar:checked + label[for='abrir-cerrar'] .abrir {
     background-color: #f90;
 }
 
+.nameUser {
+    display: block;
+    font-size: 1.2em;
+    color: #ffbb37;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: capitalize;
+    margin: 10px 0;
+    padding: 20px 10px;
+    text-align: left;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 15px;
+    left: 16vh;
+    border-radius: 50%;
+}
+
 h1 {
     color: #f90;
     font-size: 180%;
@@ -183,7 +205,6 @@ h1 {
     z-index: 55555555555555;
     box-sizing: border-box;
     position: fixed;
-    right: 10px;
 }
 
 .icon-home-navbar {

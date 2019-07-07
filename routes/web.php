@@ -27,6 +27,7 @@ Route::get('/history', 'CartController@history')->middleware('auth');
 Route::get('/thanks', function(){
   view('thanks')->middleware('auth');
 });
+Route::get('/profile', 'UsersController@profile');
 
 
 
