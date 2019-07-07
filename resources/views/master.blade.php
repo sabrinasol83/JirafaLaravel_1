@@ -20,9 +20,13 @@
 
 <body>
   <header class="nav-header">
-      <input type="checkbox" id="abrir-cerrar" name="abrir-cerrar" value="">
-      <label for="abrir-cerrar"><a href="/" class="btn-home">LOGIN</a><span class="abrir">&#9776;</span><span class="cerrar">X</span></label>
-      
+		@if (Auth::guest())
+			<input type="checkbox" id="abrir-cerrar" name="abrir-cerrar" value="">
+			<label for="abrir-cerrar"><a href="{{ route('login') }}" class="btn-home">LOGIN</a><span class="abrir">&#9776;</span><span class="cerrar">X</span></label>
+		@else 
+			<input type="checkbox" id="abrir-cerrar" name="abrir-cerrar" value="">
+			<label for="abrir-cerrar"><a href="/products" class="btn-home">Shop!</a><span class="abrir">&#9776;</span><span class="cerrar">X</span></label>
+		@endif
         <div id="sidebar" class="sidebar">
             <ul class="menu">
               <li><a href="/">home</a></li>
@@ -38,35 +42,24 @@
               	<li><a class="itemNav" href="{{ route('login') }}">Login</a></li>
               	<li><a class="itemNav" href="{{ route('register') }}">Register</a></li>
          			 @else
-              <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                      {{ Auth::user()->name }} <span class="caret"></span>
-                  </a>
-
-                  <ul class="dropdown-menu" role="menu">
-                      <li>
-                          <a href="{{ route('logout') }}"
-                              onclick="event.preventDefault();
-                                       document.getElementById('logout-form').submit();">
-                              Logout
-                          </a>
-
-                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                              {{ csrf_field() }}
-                          </form>
-                      </li>
-                  </ul>
-              </li>
+							<li>
+								<a href="{{ route('logout') }}"
+										onclick="event.preventDefault();
+														 document.getElementById('logout-form').submit();">
+										Logout
+								</a>
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+										{{ csrf_field() }}
+								</form>
+						</li>
+						<a href="/profile" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position:relative; padding-left:50px;">
+							<img src="/storage/foto_perfil/{{ Auth::user()->foto_perfil }}" class="avatar" alt="Img perfil usuario">mi perfil: 
+							{{ Auth::user()->name }}<span class="caret"></span>
+					</a>
+						
           @endif
             </ul>
         </div>
-      
-      <!--Nota: falta modificar CSS del div y/o ul del login y register-->
-      <div class="nav-header">
-        <ul class="authNav">
-          
-        </ul>
-      </div>
 
     </header>
   @yield('content')

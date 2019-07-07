@@ -38,17 +38,17 @@
 
       <div class="form-group">
             <label>
-              <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+              <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordarme
             </label>
       </div>
 
       <div class="form-group">
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" class="btn btn-primary btn-standard">
             Login
           </button>
 
           <a class="btn btn-link" href="{{ route('password.request') }}">
-            Forgot Your Password?
+            Olvidaste la contraseña?
           </a>
       </div>
 
