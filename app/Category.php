@@ -11,10 +11,10 @@ class Category extends Model
     protected $guarded = [];
 
     protected $table = 'categories';
-    protected $primaryKey = 'category_id';
+    //protected $primaryKey = 'category_id';
 
         public function products()
         {
-            return $this->belongsToMany('App\Product');
+            return $this->hasMany('App\Product');
         }
 }

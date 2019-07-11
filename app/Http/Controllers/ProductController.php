@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -12,11 +13,20 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::all();
+        $query = Category::with('products');
 
-        return view('products')->with('products', $products);
+        if ($request->has('categories')) {
+          $categories = $query->whereIn('id', explode(',', $request->get('categories')));
+        }
+
+        $categories = $query->get();
+
+        return view('products', [
+          'categories' => $categories,
+          'categories_list' => Category::all(),
+        ]);
     }
 
     /**

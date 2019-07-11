@@ -14,11 +14,13 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
       $pagination = 9;
       $categories = Category::all();
-      if (request()->category) {
+
+
+      if ($request->category) {
           $products = Product::with('categories')->whereHas('categories', function ($query) {
               $query->where('slug', request()->category);
           });

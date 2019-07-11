@@ -12,7 +12,7 @@ Jirafa Brew House
     <div id="contenido">
         <section class="landing" id="home">
             <div class="bloque-home">
-                <img class="background-image" src="IMG/madera-rustica.jpg">
+                <img class="background-image" src="IMG\madera-rustica.jpg">
                 <div class="landing">
                     <img class="landing-img" src="IMG\rubia-landing.png" alt="cerveza-rubia-landing">
                 </div>

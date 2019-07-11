@@ -19,6 +19,7 @@ class CreateCartsTable extends Migration
             $table->text('description');
             $table->decimal('price',6,2);
             $table->string('beer_img');
+            $table->bigInteger('category_id');
             $table->integer('cant')->nullable();
             $table->bigInteger('user_id');
             $table->integer('status')->default(0);
