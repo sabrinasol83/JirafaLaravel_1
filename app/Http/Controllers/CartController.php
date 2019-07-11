@@ -47,6 +47,7 @@ class CartController extends Controller
         $newItem->description = $product->description;
         $newItem->price = $product->price;
         $newItem->beer_img = $product->beer_img;
+        //$newItem->category_id = $product->category_id;
         $newItem->cant = 1; //Vamos a hardcodear el número pero debería venir de un form o del array.
         $newItem->user_id = Auth::User()->id;
         //dd($newItem);
