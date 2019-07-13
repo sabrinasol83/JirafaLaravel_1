@@ -489,25 +489,15 @@ label #msg {
 /* footer */
 
 .footer {
-<<<<<<< HEAD
+    bottom: 0;
+    width: 100%;
     background-color: #eee;
-    min-height: 20vh;
+    height: 20vh;
     padding: 24px 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: column;
-=======
-  bottom: 0;
-  width: 100%;
-  background-color: #eee;
-  height: 20vh;
-  padding: 24px 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: column;
->>>>>>> be425acef8f5b861f2c6c37dba51c30ccbb87ab3
 }
 .footer a i {
     padding: 0 15px;
@@ -558,8 +548,12 @@ label #msg {
     width: 100%;
 }
 .category {
-<<<<<<< HEAD
     text-align: center;
+}
+
+.category h2 {
+    margin-top: 70px;
+    font-size: 1.5rem;
 }
 
 .btn-category {
@@ -569,35 +563,12 @@ label #msg {
     font-size: 1.2rem;
     text-transform: uppercase;
     margin: 0 auto;
-    margin-top: 60px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
     padding: 10px;
     background-color: #ffbb37;
     border: 0px;
     height: 50px;
-=======
-  text-align: center;
-}
-
-.category h2{
-  margin-top:70px;
-  font-size: 1.5rem;
-}
-
-.btn-category {
-   box-sizing: border-box;
-   text-align: center;
-   color: #fff;
-   font-size: 1.2rem;
-   text-transform: uppercase;
-   margin: 0 auto;
-   margin-top:20px;
-   margin-bottom: 30px;
-   padding: 10px;
-   background-color: #ffbb37;
-   border: 0px;
-   height: 50px;
->>>>>>> be425acef8f5b861f2c6c37dba51c30ccbb87ab3
 }
 
 .btn-categoy:hover {
@@ -616,16 +587,9 @@ label #msg {
 }
 
 .beer-thumbnail img {
-<<<<<<< HEAD
     box-sizing: border-box;
     height: 400px;
     position: relative;
-    margin-left: 10vw;
-=======
-  box-sizing: border-box;
-  height: 400px;
-  position: relative;
->>>>>>> be425acef8f5b861f2c6c37dba51c30ccbb87ab3
 }
 
 .beer-info {
@@ -726,32 +690,30 @@ p.product-price {
     margin-right: 20vw;
 }
 
-<<<<<<< HEAD
-=======
 /* CATEGORY PRODUCT FILTER */
 .category {
-  text-align: center;
+    text-align: center;
 }
 
-.category h2{
-  margin-top:70px;
-  font-size: 2.0rem;
-  font-family: 'Montserrat', 'Varela Round', 'Courier New', Courier, monospace;
-  font-weight: 200;
+.category h2 {
+    margin-top: 70px;
+    font-size: 2rem;
+    font-family: 'Montserrat', 'Varela Round', 'Courier New', Courier, monospace;
+    font-weight: 200;
 }
 
 .btn-category {
-   box-sizing: border-box;
-   text-align: center;
-   color: #fff;
-   font-size: 1.2rem;
-   text-transform: uppercase;
-   margin: 0 auto;
-   margin-bottom: 30px;
-   padding: 10px;
-   background-color: #ffbb37;
-   border: 0px;
-   height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: #ffbb37;
+    border: 0px;
+    height: 50px;
 }
 
 .btn-categoy:hover {
@@ -768,23 +730,19 @@ h1.cart {
     margin-top: 70px;
     text-align: center;
 }
-div.cart-checkout{
-  text-align: center;
-  margin-top: 30px;
-  margin-right: 15vw;
-  text-align: right;
+div.cart-checkout {
+    text-align: center;
+    margin-top: 30px;
+    margin-right: 15vw;
+    text-align: right;
 }
 
 h2.cart-checkout {
     color: #f90;
     font-size: 1.2rem;
     font-weight: normal;
-
 }
 
-
-
->>>>>>> be425acef8f5b861f2c6c37dba51c30ccbb87ab3
 /*.card-desktop{
   display: none;
 }
@@ -940,16 +898,9 @@ a:hover {
 /* PRODUCTS MOBILE*/
 
 .beer-thumbnail {
-<<<<<<< HEAD
     position: relative;
     box-sizing: border-box;
-    text-align: left;
-    margin-left: 30px;
-=======
-  position: relative;
-  box-sizing: border-box;
-  text-align: center;
->>>>>>> be425acef8f5b861f2c6c37dba51c30ccbb87ab3
+    text-align: center;
 }
 
 .beer-thumbnail img {
@@ -958,36 +909,36 @@ a:hover {
 }
 
 .beer-info {
-  position: relative;
-  box-sizing: border-box;
-  text-align: center;
-  margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .beer-info h2 {
-  color: #f90;
-  font-size: 2.5rem;
-  font-weight:300;
-  margin-top: 1px;
-  padding-bottom: 5px;
+    color: #f90;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-top: 1px;
+    padding-bottom: 5px;
 }
 
 .beer-info p {
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: normal;
-  margin-top: 1px;
-  padding-bottom: 5px;
-  text-align: justify;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-top: 1px;
+    padding-bottom: 5px;
+    text-align: justify;
 }
 
 h4.price {
-  color: #fff;
-  font-size: 2rem;
-  font-weight: normal;
-  margin-top: 1px;
-  padding-bottom: 5px;
-  text-align: center;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: normal;
+    margin-top: 1px;
+    padding-bottom: 5px;
+    text-align: center;
 }
 
 div.ver-products {
@@ -1025,38 +976,39 @@ h1.cart-title {
 }
 
 table {
-  width: 100%;
-  padding: 2vw;
+    width: 100%;
+    padding: 2vw;
 }
 
 th {
-  height: 30px;
+    height: 30px;
 }
 tr {
-  height: 50px;
-  width: 100%;
+    height: 50px;
+    width: 100%;
 }
 
-th, td {
-  border-bottom: 1px solid #ddd;
-  padding: 15px;
-  text-align: center;
+th,
+td {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
 }
 
-td img{
-  height: 80px;
-  margin: 0 auto;
+td img {
+    height: 80px;
+    margin: 0 auto;
 }
 
 button.btn-eliminar {
-  font-size: 2.0rem;
-  background-color: Transparent;
-  background-repeat:no-repeat;
-  border: none;
-  cursor:pointer;
-  overflow: hidden;
+    font-size: 2rem;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
 }
 
 button.btn-eliminar:hover {
-  color: red;
+    color: red;
 }
