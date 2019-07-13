@@ -1,30 +1,52 @@
 @extends('master')
 
 @section('main')
-  <main>
-    <div id="contenido">
-      <h1 class="title-princ">Detalle de tu compra</h1>
-      <ul>
-        @forelse ($cart as $items)
-          <img src="/storage/product/{{$items->featured_img}}" alt="">
-          <li>Id: {{$items->id}} <br> 
-            Nombre: {{$items->name}} <br>
-          Descripción: {{$items->description}} <br>
-          Precio: {{$items->price}}</li>
-          <form class="" action="/cart/{{$items->id}}" method="post">
-            @csrf
-            <button type="submit">Quitar del carrito</button>
-          </form>
+<main>
+    <div>
+        <h1 class="cart"><i class="fas fa-shopping-cart"></i><br> CART</h1>
+        <table class="table">
+            <tr>
+                <th>IMG</th>
+                <!--<th>ID</th>-->
+                <th>NOMBRE</th>
+                <!--<th>DESCRIPCION</th>-->
+                <th>PRECIO</th>
+                <th>CANT</th>
+                <th>TOTAL</th><!--TOTAL (cantidad * precio) -->
+                <th></th>
+            </tr>
 
-        @empty
+            <tr>
+                @forelse ($cart as $items)
+                <!--<td>{{$items->id}}</td>-->
+                <td><img src="/storage/product/{{$items->beer_img}}" alt=""></td>
+                <td>{{$items->name}}</td>
+                <!--<td>{{$items->description}}</td>-->
+                <td>{{$items->price}}</td>
+                <td>*</td>
+                <td>*</td>
+                <td>
+                    <form class="" action="/cart/{{$items->id}}" method="post">
+                        @csrf
+                        <button class="btn-eliminar" type="submit"><i class="far fa-times-circle"></i></button>
+                    </form>
+                </td>
+            </tr>
+
+
+            @empty
             <p>Su carrito está vacío</p>
-        @endforelse
+            @endforelse
+        </table>
+        <div class="cart-checkout">
+        <h2 class="cart-checkout"><b>TOTAL</b>  AR$ {{$total}}</h2>
 
         @if ($cart->isNotEmpty())
-          <a href="/cart/close">Comprar</a>
-        @endif
 
-      </ul>
+        <button type="button" class="btn-products"><a href="/cart/close">COMPRAR <i class="fas fa-beer"></i></a></button>
+      </div>
+        @endif
+</div>
     </div>
-  </main>    
+</main>
 @endsection
