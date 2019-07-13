@@ -28,7 +28,7 @@ Route::get('/thanks', function(){
   view('thanks')->middleware('auth');
 });
 Route::get('/profile', 'UsersController@profile');
-
+Route::post('/profile',  'UsersController@update')->middleware('auth');
 
 
 Route::get('/', function (){
