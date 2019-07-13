@@ -29,9 +29,15 @@
 		@endif
         <div id="sidebar" class="sidebar">
             <ul class="menu">
+<<<<<<< HEAD
               <li><a class="ancla" href="/">home</a></li>
               <li><a class="ancla" href="/#section-nosotros">nosotros</a></li>
               <li><a class="ancla" href="/products">beers</a></li>
+=======
+              <li><a href="/">home</a></li>
+              <li><a href="/#section-nosotros">nosotros</a></li>
+              <li><a href="/products">beers</a></li>
+>>>>>>> be425acef8f5b861f2c6c37dba51c30ccbb87ab3
               {{-- <li><a href="/products">productos</a></li> --}}
               @if (!Auth::guest())
                 <li><a class="ancla" href="/cart"><i class="fas fa-shopping-cart"></i></a></li>
@@ -43,7 +49,11 @@
               	<li class="derecha ancla"><a class="itemNav" href="{{ route('register') }}">Register</a></li>
          			 @else
 							<li>
+<<<<<<< HEAD
 								<a class="ancla" href="{{ route('logout') }}" 
+=======
+								<a href="{{ route('logout') }}"
+>>>>>>> be425acef8f5b861f2c6c37dba51c30ccbb87ab3
 										onclick="event.preventDefault();
 														 document.getElementById('logout-form').submit();" class="dropdown-toggle" data-toggle="dropdown">
 										Logout
@@ -52,8 +62,13 @@
 										{{ csrf_field() }}
 								</form>
 						</li>
+<<<<<<< HEAD
 						<li class="derecha ancla"><a href="/profile" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position:relative; padding-left:50px;">
 							<img src="/storage/foto_perfil/{{ Auth::user()->foto_perfil }}" class="avatar" alt="Img perfil usuario"><span class="caret">mi perfil: 
+=======
+						<li class="derecha"><a href="/profile" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position:relative; padding-left:50px;">
+							<img src="/storage/foto_perfil/{{ Auth::user()->foto_perfil }}" class="avatar" alt="Img perfil usuario"><span class="caret">mi perfil:
+>>>>>>> be425acef8f5b861f2c6c37dba51c30ccbb87ab3
 									{{ Auth::user()->name }}</span>
 					</a></li>
           @endif

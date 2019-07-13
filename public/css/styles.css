@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Dokdo|Varela+Round');
 @import url('https://fonts.googleapis.com/css?family=Taviraj&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 /* reseteos generales */
 * {
@@ -207,9 +208,10 @@ h1 {
     font-size: 1rem;
 }
 .nav-header {
-    z-index: 55555555555555;
+    z-index: 80;
     box-sizing: border-box;
     position: fixed;
+    background-color: black;
 }
 
 .icon-home-navbar {
@@ -487,6 +489,7 @@ label #msg {
 /* footer */
 
 .footer {
+<<<<<<< HEAD
     background-color: #eee;
     min-height: 20vh;
     padding: 24px 0;
@@ -494,6 +497,17 @@ label #msg {
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: column;
+=======
+  bottom: 0;
+  width: 100%;
+  background-color: #eee;
+  height: 20vh;
+  padding: 24px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+>>>>>>> be425acef8f5b861f2c6c37dba51c30ccbb87ab3
 }
 .footer a i {
     padding: 0 15px;
@@ -544,6 +558,7 @@ label #msg {
     width: 100%;
 }
 .category {
+<<<<<<< HEAD
     text-align: center;
 }
 
@@ -560,6 +575,29 @@ label #msg {
     background-color: #ffbb37;
     border: 0px;
     height: 50px;
+=======
+  text-align: center;
+}
+
+.category h2{
+  margin-top:70px;
+  font-size: 1.5rem;
+}
+
+.btn-category {
+   box-sizing: border-box;
+   text-align: center;
+   color: #fff;
+   font-size: 1.2rem;
+   text-transform: uppercase;
+   margin: 0 auto;
+   margin-top:20px;
+   margin-bottom: 30px;
+   padding: 10px;
+   background-color: #ffbb37;
+   border: 0px;
+   height: 50px;
+>>>>>>> be425acef8f5b861f2c6c37dba51c30ccbb87ab3
 }
 
 .btn-categoy:hover {
@@ -578,10 +616,16 @@ label #msg {
 }
 
 .beer-thumbnail img {
+<<<<<<< HEAD
     box-sizing: border-box;
     height: 400px;
     position: relative;
     margin-left: 10vw;
+=======
+  box-sizing: border-box;
+  height: 400px;
+  position: relative;
+>>>>>>> be425acef8f5b861f2c6c37dba51c30ccbb87ab3
 }
 
 .beer-info {
@@ -682,6 +726,65 @@ p.product-price {
     margin-right: 20vw;
 }
 
+<<<<<<< HEAD
+=======
+/* CATEGORY PRODUCT FILTER */
+.category {
+  text-align: center;
+}
+
+.category h2{
+  margin-top:70px;
+  font-size: 2.0rem;
+  font-family: 'Montserrat', 'Varela Round', 'Courier New', Courier, monospace;
+  font-weight: 200;
+}
+
+.btn-category {
+   box-sizing: border-box;
+   text-align: center;
+   color: #fff;
+   font-size: 1.2rem;
+   text-transform: uppercase;
+   margin: 0 auto;
+   margin-bottom: 30px;
+   padding: 10px;
+   background-color: #ffbb37;
+   border: 0px;
+   height: 50px;
+}
+
+.btn-categoy:hover {
+    color: #fff;
+    background-color: #f90;
+}
+
+/*CART TABLE DESKTOP */
+h1.cart {
+    color: #f90;
+    font-size: 36px;
+    font-family: 'Montserrat', 'Varela Round', 'Courier New', Courier, monospace;
+    font-weight: normal;
+    margin-top: 70px;
+    text-align: center;
+}
+div.cart-checkout{
+  text-align: center;
+  margin-top: 30px;
+  margin-right: 15vw;
+  text-align: right;
+}
+
+h2.cart-checkout {
+    color: #f90;
+    font-size: 1.2rem;
+    font-weight: normal;
+
+}
+
+
+
+>>>>>>> be425acef8f5b861f2c6c37dba51c30ccbb87ab3
 /*.card-desktop{
   display: none;
 }
@@ -834,18 +937,57 @@ a:hover {
     }
 }
 
-/* PRODUCTS */
+/* PRODUCTS MOBILE*/
 
 .beer-thumbnail {
+<<<<<<< HEAD
     position: relative;
     box-sizing: border-box;
     text-align: left;
     margin-left: 30px;
+=======
+  position: relative;
+  box-sizing: border-box;
+  text-align: center;
+>>>>>>> be425acef8f5b861f2c6c37dba51c30ccbb87ab3
 }
 
 .beer-thumbnail img {
     height: 400px;
     position: relative;
+}
+
+.beer-info {
+  position: relative;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.beer-info h2 {
+  color: #f90;
+  font-size: 2.5rem;
+  font-weight:300;
+  margin-top: 1px;
+  padding-bottom: 5px;
+}
+
+.beer-info p {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-top: 1px;
+  padding-bottom: 5px;
+  text-align: justify;
+}
+
+h4.price {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: normal;
+  margin-top: 1px;
+  padding-bottom: 5px;
+  text-align: center;
 }
 
 div.ver-products {
@@ -871,4 +1013,50 @@ div.ver-products {
     border: 0px;
     border-radius: 10px;
     height: 50px;
+}
+
+/* CART TABLE MOBILE*/
+h1.cart-title {
+    color: #f90;
+    font-size: 36px;
+    font-weight: normal;
+    margin-top: 60px;
+    text-align: center;
+}
+
+table {
+  width: 100%;
+  padding: 2vw;
+}
+
+th {
+  height: 30px;
+}
+tr {
+  height: 50px;
+  width: 100%;
+}
+
+th, td {
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+}
+
+td img{
+  height: 80px;
+  margin: 0 auto;
+}
+
+button.btn-eliminar {
+  font-size: 2.0rem;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+}
+
+button.btn-eliminar:hover {
+  color: red;
 }
