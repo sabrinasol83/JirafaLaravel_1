@@ -31,7 +31,7 @@
             <ul class="menu">
               <li><a href="/">home</a></li>
               <li><a href="/#section-nosotros">nosotros</a></li>
-              <li><a href="/#section-estilos">beers</a></li>
+              <li><a href="/products">beers</a></li>
               {{-- <li><a href="/products">productos</a></li> --}}
               @if (!Auth::guest())
                 <li><a href="/cart"><i class="fas fa-shopping-cart"></i></a></li>
@@ -43,7 +43,7 @@
               	<li class="derecha"><a class="itemNav" href="{{ route('register') }}">Register</a></li>
          			 @else
 							<li>
-								<a href="{{ route('logout') }}" 
+								<a href="{{ route('logout') }}"
 										onclick="event.preventDefault();
 														 document.getElementById('logout-form').submit();" class="dropdown-toggle" data-toggle="dropdown">
 										Logout
@@ -53,7 +53,7 @@
 								</form>
 						</li>
 						<li class="derecha"><a href="/profile" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position:relative; padding-left:50px;">
-							<img src="/storage/foto_perfil/{{ Auth::user()->foto_perfil }}" class="avatar" alt="Img perfil usuario"><span class="caret">mi perfil: 
+							<img src="/storage/foto_perfil/{{ Auth::user()->foto_perfil }}" class="avatar" alt="Img perfil usuario"><span class="caret">mi perfil:
 									{{ Auth::user()->name }}</span>
 					</a></li>
           @endif

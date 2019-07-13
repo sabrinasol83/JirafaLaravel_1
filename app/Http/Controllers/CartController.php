@@ -19,7 +19,17 @@ class CartController extends Controller
     {
         $openCart = Cart::all()->where('user_id', '=', Auth::User()->id)->where('status', '=', 0);
 
-        return view('cart')->with('cart', $openCart);
+        $totalCart = $openCart->reduce(function($total, $cart){
+          $total += $cart->price;
+          return $total;
+        });
+
+        $cantidad = Cart::all()->where('user_id', '=', Auth::User()->id)->where('status', '=', 0);
+
+
+
+
+        return view('cart')->with('cart', $openCart)->with('total',$totalCart);
     }
 
     /**
