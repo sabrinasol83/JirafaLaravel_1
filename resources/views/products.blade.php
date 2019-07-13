@@ -1,29 +1,47 @@
 @extends('master')
 
 @section('title')
-  Products Jirafa Brew House
+Products Jirafa Brew House
 @endsection
 
 <!--Aca esta el section main de products-->
 
 
 @section('main')
-  <main>
+<main>
+      <section class="category">
+        <div class="category-query">
+
+  @foreach($categories_list as $cat)
+    <a href="{{ request()->has('categories') ? request()->fullUrl() . ',' . $cat->id : 'products?categories=' . $cat->id }}">
+      <button type="button" class="btn-category">{{ $cat->name }}</button>
+    </a>
+  @endforeach
+    <a href="/products"> <button type="button" class="btn-category">Reset</button></a>
+  </div>
+    </section>
     <div id="contenido">
+        <section class="section-estilos" id="section-estilos">
+            <h1 class="title-princ">Nuestros Productos</h1>
 
-      <h1 class="title-princ">Nuestros Productos</h1>
-
-
-      @foreach ($products as $product)
-      <article class="">
-        <h2>{{$product->name}}</h2>
-        <p>{{$product->description}}</p>
-        <p>{{$product->price}}</p>
-        <p><img src="/storage/app/public/product/{{$product->beer_img}}" alt="cerveza"></p>
-        <a href="/product/{{$product->id}}">Ver más</a>
-      </article>
-      @endforeach
-
+@foreach ($categories as $category)
+            @foreach ($category->products as $product)
+            <article class="estilo">
+                <div class="beer-thumbnail">
+                    <img src="/storage/product/{{$product->beer_img}}" alt="cerveza">
+                </div>
+                <div class="beer-info">
+                    <h2>{{$product->name}}</h2>
+                    <!--<p>{{$product->description}}</p>-->-->
+                    <h4 class="price">{{$product->price}}</h4>
+                </div>
+                <div class="beer-info">
+                    <a href="/product/{{$product->id}}"><button type="button" class="btn-products">Ver más</button></a>
+                </div>
+            </article>
+            @endforeach
+            @endforeach
+        </section>
     </div>
-  </main>
+</main>
 @endsection

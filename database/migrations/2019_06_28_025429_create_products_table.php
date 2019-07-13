@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->decimal('price',6,2);
             $table->string('beer_img');
+            $table->bigInteger('category_id');
             $table->timestamps();
             $table->softDeletes();
         });

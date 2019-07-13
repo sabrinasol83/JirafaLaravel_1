@@ -17,6 +17,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Migracion de Proyecto
 
+Route::get('/category', 'CategoryController@index')->name('category.index');
+Route::get('/category/{product}', 'CategoryController@show')->name('category.show');
+
 Route::get('/products', 'ProductController@index');
 Route::get('/product/{id}', 'ProductController@show');
 Route::get('/product/{id}/addtocart', 'CartController@store')->middleware('auth');

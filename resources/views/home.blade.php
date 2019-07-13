@@ -18,7 +18,7 @@
               </div>
           </div>
       </section>
-      
+
      <section id="section-nosotros">
           <div class="nosotros">
               <p class="paragraph-us"><h1 class="title-princ">Nosotros</h1>¡Hablemos de cervezas! Somos una cervecería que hace <i>cerveza de garage</i>, ¿Qué significa esto? Somos un emprendimiento de dos amigos que les gusta el mundo de la cerveza, tenemos nuestra fábrica en nuestro garage.. y muchas ganas de aprender. Las recetas de todas nuestras birras se encuentran en linea. ¿Estas comenzando y tenes dudas? <a style="color:#ffbb37" href="#section-contact">No dudes en contactarnos</a></p>
@@ -31,43 +31,41 @@
         <h1 class="title-princ">Productos</h1>
           <article class="estilo">
             <div class="photo-container">
-                <img class="photo" src="IMG/estilo-rubia.jpg" alt="estilo 01">
+                <a href="/products?categories=1"><img class="photo" src="IMG/estilo-rubia.jpg" alt="rubia"></a>
             </div>
             <div class="title">
-                <h1>Rubia</h1>
+                <a href="/products?categories=1"><h1>Rubia</h1></a>
                 <p class="title">IPA's o Blonde, muy suaves o muy power.</p>
             </div>
           </article>
           <article class="estilo">
             <div class="photo-container">
-              <img class="photo" src="IMG/estilo-negra.jpg" alt="estilo 02">
+              <a href="/products?categories=3"><img class="photo" src="IMG/estilo-negra.jpg" alt="negra"></a>
             </div>
             <div class="title">
                 <h1>Negra</h1>
-                <p class="title">Stout, porter, mucho aroma y sabor.</p>
+                <a href="/products?categories=3"><p class="title">Stout, porter, mucho aroma y sabor.</p></a>
             </div>
           </article>
           <article class="estilo">
             <div class="photo-container">
-              <img class="photo" src="IMG/estilo-roja.jpg" alt="estilo 03">
+              <a href="/products?categories=2"><img class="photo" src="IMG/estilo-roja.jpg" alt="roja"></a>
             </div>
             <div class="title">
-                <h1>Roja</h1>
+                <a href="/products?categories=2"><h1>Roja</h1></a>
                 <p class="title">Cervezas maltosas, agradables al paladar</p>
             </div>
           </article>
           <article class="estilo">
             <div class="photo-container">
-              <img class="photo" src="IMG/estilo-reserva.jpg" alt="estilo 04">
+              <a href="/products?categories=4"><img class="photo" src="IMG/estilo-reserva.jpg" alt="estilo 04"></a>
             </div>
             <div class="title">
-                <h1>Reserva</h1>
+                <a href="/products?categories=4"><h1>Reserva</h1></a>
                 <p class="title">Cervezas doradas reserva en barriles de whisky.</p>
             </div>
           </article>
       </section>
-      <!-- Nota: Hay que volver a hacer el formulario de Login y Signup con el buton en header. 
-      Vamos a re-hacer el forumulario con Laravel.-->
 
       </div>
     </main>
@@ -89,7 +87,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    
+
                 </div>
             </div>
         </div>

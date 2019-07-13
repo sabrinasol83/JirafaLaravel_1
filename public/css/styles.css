@@ -542,6 +542,148 @@ label #msg {
 .photo-container img {
     width: 100%;
 }
+.category {
+  text-align: center;
+
+}
+
+.btn-category {
+   box-sizing: border-box;
+   text-align: center;
+   color: #fff;
+   font-size: 1.2rem;
+   text-transform: uppercase;
+   margin: 0 auto;
+   margin-top:60px;
+   margin-bottom: 20px;
+   padding: 10px;
+   background-color: #ffbb37;
+   border: 0px;
+   height: 50px;
+}
+
+.btn-categoy:hover {
+    color: #fff;
+    background-color: #f90;
+}
+
+.category-query {
+  display: inline-block;
+  margin: auto;
+}
+
+.beer-thumbnail {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.beer-thumbnail img {
+  box-sizing: border-box;
+  height: 400px;
+  position: relative;
+  margin-left: 10vw;
+}
+
+.beer-info {
+  position: relative;
+  box-sizing: border-box;
+  text-align: left;
+  margin-left: 5vw;
+  margin-right: 3vw
+}
+
+.beer-info h2 {
+  color: #f90;
+  font-size: 2.5rem;
+  font-weight:300;
+  margin-top: 1px;
+  padding-bottom: 5px;
+}
+
+.beer-info p {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-top: 1px;
+  padding-bottom: 5px;
+  text-align: justify;
+}
+
+h4.price {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: normal;
+  margin-top: 1px;
+  padding-bottom: 5px;
+  text-align: justify;
+}
+
+div.ver-products {
+    display: block;
+    width: 100%;
+    color: #efefef;
+    font-size: 18px;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 5px;
+}
+
+.btn-products {
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 10px;
+  background-color: #ffbb37;
+  border: 0px;
+  border-radius: 10px;
+  height: 50px;
+}
+
+
+.btn-products:hover {
+    color: #fff;
+    background-color: #f90;
+}
+
+/*PRODUCTS*/
+.product-img {
+    z-index: 55;
+}
+
+img.product-img {
+  width: 400px;
+  margin-bottom: -25vh;
+  margin-top:10px;
+}
+
+h1.product-title {
+  text-align: center;
+  padding-top: 80px;
+}
+
+p.product-info {
+  box-sizing: border-box;
+  text-align: justify;
+  font-size: 18px;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  margin-bottom: 5px;
+  padding-bottom: 0px;
+  line-height: 1.5;
+}
+
+p.product-price {
+  text-align: center;
+  font-size: 5vmin;
+  margin-left: 20vw;
+  margin-right: 20vw;
+}
+
+
 
 /*.card-desktop{
   display: none;
@@ -678,37 +820,6 @@ a:hover {
         float: left;
     }
 
-    /*.container-styles{ Note: eliminar
-  position: relative;
-  top: 30px;
-  height: 100vh;
-  flex-direction: row;
-}
-.container-styles .title-princ{ Note: eliminar
-  position: absolute;
-  top:0;
-  display: block;
-  flex-direction: row;
-}*/
-    /*
-.card{
-  display: none;
-}
-.card-desktop {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  background-color: rgba(238, 238, 238, 0.2);
-  background-size: cover;
-  background-repeat: no-repeat;
-  text-align: center;
-  padding: 20px;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width:210px;
-  height: 320px;
-  opacity: 0.8;
-}*/
     .card h1 {
         text-align: center;
         padding: 0 25px;
@@ -724,4 +835,43 @@ a:hover {
         bottom: 0;
         padding-bottom: 5px;
     }
+}
+
+/* PRODUCTS */
+
+.beer-thumbnail {
+  position: relative;
+  box-sizing: border-box;
+  text-align: left;
+  margin-left: 30px;
+}
+
+.beer-thumbnail img {
+    height: 400px;
+    position: relative;
+}
+
+div.ver-products {
+    display: block;
+    width: 100%;
+    color: #efefef;
+    font-size: 18px;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 5px;
+}
+
+.btn-products {
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 10px;
+  background-color: #ffbb37;
+  border: 0px;
+  border-radius: 10px;
+  height: 50px;
 }
