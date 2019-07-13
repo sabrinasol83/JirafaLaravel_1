@@ -37,7 +37,7 @@ body {
 
 header {
     color: #eee;
-    width: 100%;
+    width: 100vw;
     overflow: hidden;
     top: 0px;
 }
@@ -65,7 +65,7 @@ label[for='abrir-cerrar'] {
     cursor: pointer;
     color: #fff;
     display: inline-block;
-    width: 100%;
+    width: 100vw;
     z-index: 5555555;
 }
 
@@ -379,7 +379,7 @@ label #msg {
     text-align: center;
     width: 70%;
     max-width: 560px;
-    min-width: 320px;
+    min-width: 218px;
     margin: 0 auto;
     margin-top: 106px;
     margin-bottom: 116px;
@@ -488,7 +488,7 @@ label #msg {
 
 .footer {
     background-color: #eee;
-    height: 20vh;
+    min-height: 20vh;
     padding: 24px 0;
     display: flex;
     justify-content: center;
@@ -502,7 +502,8 @@ label #msg {
 }
 .copy-footer {
     color: #000;
-    margin: auto;
+    margin: 0 auto;
+    text-align: center;
 }
 .iconos {
     display: flex;
@@ -543,23 +544,22 @@ label #msg {
     width: 100%;
 }
 .category {
-  text-align: center;
-
+    text-align: center;
 }
 
 .btn-category {
-   box-sizing: border-box;
-   text-align: center;
-   color: #fff;
-   font-size: 1.2rem;
-   text-transform: uppercase;
-   margin: 0 auto;
-   margin-top:60px;
-   margin-bottom: 20px;
-   padding: 10px;
-   background-color: #ffbb37;
-   border: 0px;
-   height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin: 0 auto;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #ffbb37;
+    border: 0px;
+    height: 50px;
 }
 
 .btn-categoy:hover {
@@ -568,54 +568,54 @@ label #msg {
 }
 
 .category-query {
-  display: inline-block;
-  margin: auto;
+    display: inline-block;
+    margin: auto;
 }
 
 .beer-thumbnail {
-  position: relative;
-  box-sizing: border-box;
+    position: relative;
+    box-sizing: border-box;
 }
 
 .beer-thumbnail img {
-  box-sizing: border-box;
-  height: 400px;
-  position: relative;
-  margin-left: 10vw;
+    box-sizing: border-box;
+    height: 400px;
+    position: relative;
+    margin-left: 10vw;
 }
 
 .beer-info {
-  position: relative;
-  box-sizing: border-box;
-  text-align: left;
-  margin-left: 5vw;
-  margin-right: 3vw
+    position: relative;
+    box-sizing: border-box;
+    text-align: left;
+    margin-left: 5vw;
+    margin-right: 3vw;
 }
 
 .beer-info h2 {
-  color: #f90;
-  font-size: 2.5rem;
-  font-weight:300;
-  margin-top: 1px;
-  padding-bottom: 5px;
+    color: #f90;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-top: 1px;
+    padding-bottom: 5px;
 }
 
 .beer-info p {
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: normal;
-  margin-top: 1px;
-  padding-bottom: 5px;
-  text-align: justify;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-top: 1px;
+    padding-bottom: 5px;
+    text-align: justify;
 }
 
 h4.price {
-  color: #fff;
-  font-size: 2rem;
-  font-weight: normal;
-  margin-top: 1px;
-  padding-bottom: 5px;
-  text-align: justify;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: normal;
+    margin-top: 1px;
+    padding-bottom: 5px;
+    text-align: justify;
 }
 
 div.ver-products {
@@ -629,20 +629,19 @@ div.ver-products {
 }
 
 .btn-products {
-  box-sizing: border-box;
-  text-align: center;
-  color: #fff;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  margin: 0 auto;
-  margin-bottom: 50px;
-  padding: 10px;
-  background-color: #ffbb37;
-  border: 0px;
-  border-radius: 10px;
-  height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding: 10px;
+    background-color: #ffbb37;
+    border: 0px;
+    border-radius: 10px;
+    height: 50px;
 }
-
 
 .btn-products:hover {
     color: #fff;
@@ -655,35 +654,33 @@ div.ver-products {
 }
 
 img.product-img {
-  width: 400px;
-  margin-bottom: -25vh;
-  margin-top:10px;
+    width: 400px;
+    margin-bottom: -25vh;
+    margin-top: 10px;
 }
 
 h1.product-title {
-  text-align: center;
-  padding-top: 80px;
+    text-align: center;
+    padding-top: 80px;
 }
 
 p.product-info {
-  box-sizing: border-box;
-  text-align: justify;
-  font-size: 18px;
-  margin-left: 20vw;
-  margin-right: 20vw;
-  margin-bottom: 5px;
-  padding-bottom: 0px;
-  line-height: 1.5;
+    box-sizing: border-box;
+    text-align: justify;
+    font-size: 18px;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    margin-bottom: 5px;
+    padding-bottom: 0px;
+    line-height: 1.5;
 }
 
 p.product-price {
-  text-align: center;
-  font-size: 5vmin;
-  margin-left: 20vw;
-  margin-right: 20vw;
+    text-align: center;
+    font-size: 5vmin;
+    margin-left: 20vw;
+    margin-right: 20vw;
 }
-
-
 
 /*.card-desktop{
   display: none;
@@ -840,10 +837,10 @@ a:hover {
 /* PRODUCTS */
 
 .beer-thumbnail {
-  position: relative;
-  box-sizing: border-box;
-  text-align: left;
-  margin-left: 30px;
+    position: relative;
+    box-sizing: border-box;
+    text-align: left;
+    margin-left: 30px;
 }
 
 .beer-thumbnail img {
@@ -862,16 +859,16 @@ div.ver-products {
 }
 
 .btn-products {
-  box-sizing: border-box;
-  text-align: center;
-  color: #fff;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  margin: 0 auto;
-  margin-bottom: 50px;
-  padding: 10px;
-  background-color: #ffbb37;
-  border: 0px;
-  border-radius: 10px;
-  height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding: 10px;
+    background-color: #ffbb37;
+    border: 0px;
+    border-radius: 10px;
+    height: 50px;
 }

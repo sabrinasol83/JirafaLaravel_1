@@ -19,66 +19,62 @@ class UsersController extends Controller
         return view('/profile', $vac);
     }
 
+    public function update_avatar(Request $request){
+        // Logic for user upload of avatar
+        if($request->hasFile('foto_perfil')){
+            $avatar = $request->file('foto_perfil');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            $avatar->resize(300, 300)->save( public_path('/storage/foto_perfil/' . $filename ) );
+            $user = Auth::user();
+            $user->avatar = $filename;
+            $user->save();
+        }
 
+        dd($user);
+        return view('profile', ['user' => Auth::user()] );
+    }
 
     public function update(Request $request) {
         /**
          * Validate request/input 
          **/
         //dd($request);
+        //logic for user upload of avatar
+        if($request->hasFile('foto_perfil')){
+            //dd($request->foto_perfil);
+            $avatar = $request->foto_perfil->store('/public/foto_perfil');
+            $fileName = basename($avatar);
+            //dd($avatar,$fileName);
+            $user = Auth::user();
+            $user->foto_perfil = $fileName;
+            $user->save();
+            //dd($user);
+        }else {
+            $request->foto_perfil='custom.png';
+          }
 
+        //dd($user);
         
+        //if ($request->)
         $usuario = User::find(Auth::User()->id);
-        // if(empty($usuario)){
-        //    Flash::error('mensaje error');
-        //    return redirect()->back();
-        // }
-       // $input = $request->input();
 
-       $update = $request->filter(function($value, $key) {
-        return  $value != null;
-    });
-
-        dd($update);
+        //dd($update);
         $update= [];
-        
-       /*  if($request->name !== null){
-            $usuario->name = $request->name;
-        } 
-        if($request->lastName !== null){
-            $usuario->lastName = $request->lastName;
-        } 
-        if($request->gender !== null){
-            $usuario->gender = $request->gender;
-        } 
-        if($request->email !== null && $request->email !== $usuario->email){
-            $usuario->email = $request->email;
-        }
-        if(($request->pass2 === $request->pass3) && $request->pass2!==null){
-            $usuario->email = $request->email;
-        } */
-        //  else {
-        //     $errores->pass = "Las contraseñas nuevas no coinciden.";
-        // }
-       /*  foreach ($input as $key => $value) {
-            if ($value !==NULL){
-                $update[$key]=$value;
-            }
-        *}*/
 
         //dd($usuario);
         $rules = [
-            'name' => 'required|string|max:45',
-            'lastName' => 'string|max:45',
-            'gender' => 'string|max:45',
-            'email' => 'string|email|max:255|unique:users',
-            'pass' => 'required|string|min:6|confirmed',
-            'pass2' => 'sometimes|string|min:6',
-            'pass3' => 'sometimes|string|min:6',
+            'name' => 'nullable|string|max:45',
+            'lastName' => 'nullable|string|max:45',
+            'gender' => 'nullable|string|max:45',
+            'email' => 'nullable|string|email|max:255|unique:users,email,'.$usuario->id.'id',
+            'email2' => 'nullable|string|email|max:255|unique:users,email,'.$usuario->id.'id',
+            'pass' => 'required|string|min:6',
+            'pass2' => 'sometimes|nullable|string|min:6|confirmed',
+            'pass3' => 'sometimes|nullable|string|min:6|confirmed',
         ];
   
         $messages = [
-          'required' => ':attribute es obligatorio.',
+          'required' => 'El campo es obligatorio.',
           'string' => ':attribute debe ser una cadena de texto.',
           'max' => 'El campo :attribute no debe superar :max',
           'min' => 'El campo :attribute deber tener al menos :min caracteres.',
@@ -89,33 +85,30 @@ class UsersController extends Controller
         //$validacion = Validator::make($update, $rules, $messages);
         //dd($validacion);
         $this->validate($request, $rules, $messages);
-        dd($errors->all());
-        //$chan = $validacion->all(); if para sacar los null
+        //dd($errors->all());
 
-        if($request->name !== NULL){
+        if($request->name !== null){
             $usuario->name = $request->name;
         } 
-        if($request->lastName !== NULL){
+        if($request->lastName !== null){
             $usuario->lastName = $request->lastName;
         } 
-        if($request->gender !== NULL){
+        if($request->gender !== null){
             $usuario->gender = $request->gender;
         } 
-        if($request->email !== NULL && $request->email !== $usuario->email){
+        if($request->email !== null && $request->email !== $usuario->email && $request->email===$request->email2){
             $usuario->email = $request->email;
         }
-        if(($request->pass2 === $request->pass3) && $request->pass2!==NULL){
-            $usuario->email = $request->email;
-        } /* else {
-            $errores->pass = "Las contraseñas nuevas no coinciden.";
-        } */
+        if(($request->pass2 === $request->pass3) && $request->pass2!== null){
+            $usuario->email = bcrypt($request->email);
+        } 
 
-        //dd($usuario);        
+        //dd($usuario);     
         $usuario->save();
 
         //dd($usuario);
         Flash::success('Perfil actualizado con éxito.');
-        return "salio medio bien";
+        return redirect(route('home'));
         //dd ($usuario);
     }
         

@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('title')
-		Ni idea que onda esto
+		Mi perfil: {{$user->name}}
 @endsection
 <?php
 //dd($user);
@@ -17,7 +17,7 @@
 							
 								<h1 id="section-register">Bienvenide {{$user->name}}</h1>
 								<h3>Actualizá tus datos</h3>
-						<form action="/profile" method="POST" class="tarjets">
+						<form action="/profile" method="POST" class="tarjets" enctype="multipart/form-data">
 							{{ csrf_field() }}
 								<div class="form-group row">
 										<label for="foto_perfil" class="col-md-4 col-form-label text-md-right">Foto de Perfil</label>

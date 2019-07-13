@@ -76,8 +76,12 @@ class RegisterController extends Controller
     protected function create(array $data)
     { 
     //Cargar Foto de Perfil:
-      $route = $data['foto_perfil']->store('/public/foto_perfil');
-      $fileName = basename($route); //función de php;
+      if (isset($data['foto_perfil'])){
+        $route = $data['foto_perfil']->store('/public/foto_perfil');
+        $fileName = basename($route); //función de php;
+      } else {
+        $fileName='custom.png';
+      }
       //dd($route, $fileName);
 
         return User::create([           

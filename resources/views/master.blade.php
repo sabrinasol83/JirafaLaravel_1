@@ -29,21 +29,21 @@
 		@endif
         <div id="sidebar" class="sidebar">
             <ul class="menu">
-              <li><a href="/">home</a></li>
-              <li><a href="/#section-nosotros">nosotros</a></li>
-              <li><a href="/#section-estilos">beers</a></li>
+              <li><a class="ancla" href="/">home</a></li>
+              <li><a class="ancla" href="/#section-nosotros">nosotros</a></li>
+              <li><a class="ancla" href="/products">beers</a></li>
               {{-- <li><a href="/products">productos</a></li> --}}
               @if (!Auth::guest())
-                <li><a href="/cart"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="/history">Mis compras</a></li>
+                <li><a class="ancla" href="/cart"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a class="ancla" href="/history">Mis compras</a></li>
               @endif
 							<!-- Authentication Links -->
 							@if (Auth::guest())
-              	<li class="derecha"><a class="itemNav" href="{{ route('login') }}">Login</a></li>
-              	<li class="derecha"><a class="itemNav" href="{{ route('register') }}">Register</a></li>
+              	<li class="derecha ancla"><a class="itemNav" href="{{ route('login') }}">Login</a></li>
+              	<li class="derecha ancla"><a class="itemNav" href="{{ route('register') }}">Register</a></li>
          			 @else
 							<li>
-								<a href="{{ route('logout') }}" 
+								<a class="ancla" href="{{ route('logout') }}" 
 										onclick="event.preventDefault();
 														 document.getElementById('logout-form').submit();" class="dropdown-toggle" data-toggle="dropdown">
 										Logout
@@ -52,7 +52,7 @@
 										{{ csrf_field() }}
 								</form>
 						</li>
-						<li class="derecha"><a href="/profile" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position:relative; padding-left:50px;">
+						<li class="derecha ancla"><a href="/profile" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position:relative; padding-left:50px;">
 							<img src="/storage/foto_perfil/{{ Auth::user()->foto_perfil }}" class="avatar" alt="Img perfil usuario"><span class="caret">mi perfil: 
 									{{ Auth::user()->name }}</span>
 					</a></li>
@@ -66,14 +66,15 @@
 
       <footer class="footer">
         <div class="iconos">
-          <a href=""><i class="fab fa-facebook-f"></i></a>
-          <a href=""><i class="fab fa-instagram"></i></a>
-          <a href=""><i class="fab fa-twitter"></i></a>
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="http://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
         <p class="nota">Beber con moderación. Prohibida su venta a menores de 18 años.</p>
         <h5 class="copy-footer">Jirafa BrewHouse ® Todos los derechos reservados</h5>
 
 
       </footer>
+      {{-- <script src="/js/custom.js"></script> --}}
   </body>
 </html>

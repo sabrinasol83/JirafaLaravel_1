@@ -20,7 +20,27 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `beerdb`
+-- --------------------------------------------------------
 --
+CREATE TABLE IF NOT EXISTS `beerdb`.`categories` (
+  `id` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `description` text,
+  `landing_img` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `beerdb`.`categories` (`id`, `name`, `description`, `landing_img`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Rubia', 'Color brillante y con carbonatación relativam', 'rubia-landing.png', NULL, NULL, NULL),
+(2, 'Roja', 'Color rojo es debido al tostado de la cebada ', NULL, NULL, NULL, NULL),
+(3, 'Negra', 'Color muy oscuro y sabor fuerte que recuerda ', NULL, NULL, NULL, NULL),
+(4, 'Reserva', 'Cerveza híbrida envejecida durante un período', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 --
@@ -174,6 +194,7 @@ CREATE  TABLE IF NOT EXISTS `beerdb`.`products` (
   `description` text NOT NULL,
   `price` decimal(6,2) NOT NULL,
   `beer_img` varchar(191) NOT NULL,
+  `category_id` bigint(20) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -183,27 +204,28 @@ CREATE  TABLE IF NOT EXISTS `beerdb`.`products` (
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `beerdb`.`products` (`id`, `name`, `description`, `price`, `beer_img`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'DORTMUNDER GOLD® LAGER', 'Yes, it\'s known for winning medals worldwide. But locally, it\'s known as \"Dort,\" our flagship lager that humbly maintains its smooth, balanced (and charmingly unpretentious) ways.', '2806.53', '01. dortmunder-fixed_1.jpg', '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
-(2, 'ELIOT NESS® AMBER LAGER', 'Admittedly, it’s a bit of a paradox to name our Amber Lager for history’s most famous agent of prohibition. But it’s a smooth, malty (and dare we say, arresting?) paradox.', '3793.72', '02. eliotness-fixed_1.jpg', '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
-(3, 'TURNTABLE PILS®', 'Flip that record and wax nostalgic about Ohios deep-cut music legacy with our refreshing pilsner. Consider this our reissue of a classic style.', '3745.72', '03. turntable-fixed.jpg', '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
-(4, 'HOLY MOSES WHITE ALE®', 'Refreshment or bust! Orange peel, coriander, and chamomile stake their claim in this unfiltered White Ale, named for our fair city\s founder, Moses Cleaveland.', '3358.20', '04. holy-moses-combo.jpg', '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
-(5, 'BURNING RIVER® PALE ALE', 'A toast to the Cuyahoga River Fire! For rekindling an appreciation of the Great Lakes region’s natural resources (like the malt and hops illuminating this fresh Pale Ale).', '2707.76', '05. burning-river-combo.jpg', '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
-(6, 'GREAT LAKES IPA', 'To celebrate our family of employee-owners, we crafted a lightly filtered, citrus-forward IPA that’s as bright and approachable as our crew. Hard work never tasted so good.', '3861.58', 'e572a6c35c02da9d605ba50341c41ae9.jpg', '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
-(7, 'COMMODORE PERRY® IPA', 'Porro tempora quibusdam eum voluptatem. Quia sit quia dolor enim molestiae unde autem. Porro tempore in iure voluptatem.', '1361.70', '07. commodore-fixed_1.jpg', '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
-(8, 'EDMUND FITZGERALD® PORTER', 'Sint qui autem id qui similique voluptatibus. Facilis dicta dolore reiciendis necessitatibus rerum veritatis labore.', '1638.98', '08. edfitz-fixed_1.jpg', '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
-(9, 'CONWAY\S IRISH ALE®', 'Officiis accusamus maxime sint odio velit aut vel ratione. Atque enim nobis eos qui.', '799.76', '09. conway-fixed_1.jpg', '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
-(10, 'CHILLWAVE® DOUBLE IPA', 'Eum non voluptatem voluptatum atque quia enim quidem commodi. Qui aut et et et voluptatem.', '2849.24', 'dc332874ef33de4dd247b875c878994b.jpg', '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
-(11, 'CLOUD CUTTER® HOPPY WHEAT ALE', 'Provident voluptates in quaerat pariatur praesentium. Eos non illo hic et et.', '1691.71', 'f16e3868c1c68c2a0be8ae9206cc1a84.jpg', '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
-(12, 'RALLY DRUM RED ALE®', 'Beatae repellendus architecto debitis laudantium vel. Sequi placeat laudantium et. Ut et repellendus ad id error dolorem et itaque.', '421.03', 'ed615061f70062f565face6c236eea21.jpg', '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
-(13, 'HOLY MOSES RASPBERRY WHITE ALE®', 'Nam tempora architecto aut doloremque dolore dolore nihil. Sunt velit officiis in. Doloremque dicta quia optio qui facilis.', '692.66', 'a3070393065b88d07a600105009eb202.jpg', '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
-(14, 'MIDNIGHT MOSES™ DARK BELGIAN-STYLE ALE', 'Sit enim officiis harum est praesentium cumque culpa nisi. Sit consectetur qui dolores iure ab. Illum non omnis quia qui sed dignissimos.', '2986.06', '98c0dfa21e9433d6887b49d65e23759b.jpg', '2019-06-30 23:30:12', '2019-06-30 23:30:12', NULL),
-(15, 'LAKE ERIE MONSTER® IMPERIAL IPA', 'Autem aut explicabo reiciendis occaecati itaque voluptatem. Hic similique animi fugiat dolorem corrupti.', '2318.91', 'eae4ded1d836ac8a1e344acdead7d083.jpg', '2019-06-30 23:30:12', '2019-06-30 23:30:12', NULL),
-(16, 'BUCKIN\ MULE MOSCOW MULE ALE', 'Voluptatem dolor rerum qui quia fugiat. Rerum in voluptas et repellendus quo optio voluptate.', '2503.36', '91b5627a592bb201980ce741d7158aa5.jpg', '2019-06-30 23:30:12', '2019-06-30 23:30:12', NULL),
-(17, 'OKTOBERFEST', 'Dignissimos quis sit eaque. Officia dignissimos id optio occaecati facere. Vel omnis quisquam ex non exercitationem unde.', '1067.15', 'c22d9bdca6de1fe096e90dc321c09c9d.jpg', '2019-06-30 23:30:12', '2019-06-30 23:30:12', NULL),
-(18, 'MOONDOG® ESB', 'Impedit velit eius vero delectus et voluptatibus. Unde quia accusantium laborum deserunt vel quae. Neque omnis culpa iusto.', '3718.04', '7a757647fdbffcf1192995499efd62e7.jpg', '2019-06-30 23:30:12', '2019-06-30 23:30:12', NULL),
-(19, 'NOSFERATU® IMPERIAL RED ALE', 'Assumenda quidem velit voluptas ipsum sit. Consequatur non molestiae est error soluta dolorem.', '1603.74', '06468906940e5578989349e1520075cf.jpg', '2019-06-30 23:30:12', '2019-06-30 23:30:12', NULL),
-(20, 'OHIO CITY OATMEAL STOUT®', 'Hic quas eius eos porro. Et laboriosam et dolor.', '1119.57', '80686ff5615d374e4fe1122e87906f00.jpg', '2019-06-30 23:30:12', '2019-06-30 23:30:12', NULL);
+INSERT INTO `beerdb`.`products` (`id`, `name`, `description`, `price`, `beer_img`, `category_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'SCOTTISH ALE', 'Yes, it\'s known for winning medals worldwide. But locally, it\'s known as \"Dort,\" our flagship lager that humbly maintains its smooth, balanced (and charmingly unpretentious) ways.', '120.00', 'irish-ale.png', 2, '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
+(2, 'AMBER LAGER', 'Admittedly, it’s a bit of a paradox to name our Amber Lager for history’s most famous agent of prohibition. But it’s a smooth, malty (and dare we say, arresting?) paradox.', '112.00', 'amber-lager.png', 2, '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
+(3, 'PILSNER', 'Flip that record and wax nostalgic about Ohios deep-cut music legacy with our refreshing pilsner. Consider this our reissue of a classic style.', '95.00', 'pils.png', 1, '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
+(4, 'BLONDE', 'Refreshment or bust! Orange peel, coriander, and chamomile stake their claim in this unfiltered White Ale, named for our fair citys founder, Moses Cleaveland.', '100.00', 'white-ale.png', 1, '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
+(5, 'INDIA PALE ALE', 'A toast to the Cuyahoga River Fire! For rekindling an appreciation of the Great Lakes region’s natural resources (like the malt and hops illuminating this fresh Pale Ale).', '115.00', 'india-pale-ale.png', 1, '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
+(6, 'PALE ALE', 'To celebrate our family of employee-owners, we crafted a lightly filtered, citrus-forward IPA that’s as bright and approachable as our crew. Hard work never tasted so good.', '120.00', 'india-pale-ale.png', 1, '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
+(7, 'LAGER GOLD', 'Porro tempora quibusdam eum voluptatem. Quia sit quia dolor enim molestiae unde autem. Porro tempore in iure voluptatem.', '110.00', 'lager-gold.png', 1, '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
+(8, 'FITZGERALD PORTER', 'Sint qui autem id qui similique voluptatibus. Facilis dicta dolore reiciendis necessitatibus rerum veritatis labore.', '135.00', 'blackout-stout.png', 3, '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
+(9, 'IRISH ALE', 'Officiis accusamus maxime sint odio velit aut vel ratione. Atque enim nobis eos qui.', '120.00', 'irish-ale.png', 2, '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
+(10, 'CHILLWAVE SEASONAL IPA', 'Eum non voluptatem voluptatum atque quia enim quidem commodi. Qui aut et et et voluptatem.', '115.00', 'seasonal-ipa.png', 4, '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
+(11, 'HOPPY WHEAT ALE', 'Provident voluptates in quaerat pariatur praesentium. Eos non illo hic et et.', '125.00', 'wheat-ale.png', 1, '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
+(12, 'RED ALE', 'Beatae repellendus architecto debitis laudantium vel. Sequi placeat laudantium et. Ut et repellendus ad id error dolorem et itaque.', '130.00', 'red-ale.png', 2, '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
+(13, 'WHITE ALE', 'Nam tempora architecto aut doloremque dolore dolore nihil. Sunt velit officiis in. Doloremque dicta quia optio qui facilis.', '135.00', 'white-ale.png', 1, '2019-06-30 23:30:11', '2019-06-30 23:30:11', NULL),
+(14, 'DARK BELGIAN-STYLE ALE', 'Sit enim officiis harum est praesentium cumque culpa nisi. Sit consectetur qui dolores iure ab. Illum non omnis quia qui sed dignissimos.', '140.00', 'dark-ale.png', 3, '2019-06-30 23:30:12', '2019-06-30 23:30:12', NULL),
+(15, 'IMPERIAL IPA', 'Autem aut explicabo reiciendis occaecati itaque voluptatem. Hic similique animi fugiat dolorem corrupti.', '105.00', 'india-pale-ale.png', 1, '2019-06-30 23:30:12', '2019-06-30 23:30:12', NULL),
+(16, 'MOSCOW MULE ALE', 'Voluptatem dolor rerum qui quia fugiat. Rerum in voluptas et repellendus quo optio voluptate.', '120.00', 'seasonal-octoberfest.png', 4, '2019-06-30 23:30:12', '2019-06-30 23:30:12', NULL),
+(17, 'OKTOBERFEST', 'Dignissimos quis sit eaque. Officia dignissimos id optio occaecati facere. Vel omnis quisquam ex non exercitationem unde.', '111.00', 'seasonal-octoberfest.png', 4, '2019-06-30 23:30:12', '2019-06-30 23:30:12', NULL),
+(18, 'MOONDOG', 'Impedit velit eius vero delectus et voluptatibus. Unde quia accusantium laborum deserunt vel quae. Neque omnis culpa iusto.', '120.00', 'blackout-stout.png', 3, '2019-06-30 23:30:12', '2019-06-30 23:30:12', NULL),
+(19, 'BERRY SEASONAL ALE', 'Assumenda quidem velit voluptas ipsum sit. Consequatur non molestiae est error soluta dolorem.', '130.00', 'seasonal-white-ale.png', 2, '2019-06-30 23:30:12', '2019-06-30 23:30:12', NULL),
+(20, 'OATMEAL STOUT', 'Hic quas eius eos porro. Et laboriosam et dolor.', '130.00', 'oatmeal-stout.png', 3, '2019-06-30 23:30:12', '2019-06-30 23:30:12', NULL);
+
 
 -- --------------------------------------------------------
 
