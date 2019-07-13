@@ -9,13 +9,17 @@ Products Jirafa Brew House
 
 @section('main')
 <main>
+      <section class="category">
+        <div class="category-query">
+
   @foreach($categories_list as $cat)
-    <a style="font-size:80px;" href="{{ request()->has('categories') ? request()->fullUrl() . ',' . $cat->id : 'products?categories=' . $cat->id }}">
-      {{ $cat->name }}
+    <a href="{{ request()->has('categories') ? request()->fullUrl() . ',' . $cat->id : 'products?categories=' . $cat->id }}">
+      <button type="button" class="btn-category">{{ $cat->name }}</button>
     </a>
   @endforeach
-    <a style="font-size:80px;"  href="/products">Reset</a>
-
+    <a href="/products"> <button type="button" class="btn-category">Reset</button></a>
+  </div>
+    </section>
     <div id="contenido">
         <section class="section-estilos" id="section-estilos">
             <h1 class="title-princ">Nuestros Productos</h1>
