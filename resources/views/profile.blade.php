@@ -17,8 +17,8 @@
 							
 								<h1 id="section-register">Bienvenide {{$user->name}}</h1>
 								<h3>Actualizá tus datos</h3>
-						<form action="#section-register" method="POST" class="tarjets">
-
+						<form action="/profile" method="POST" class="tarjets">
+							{{ csrf_field() }}
 								<div class="form-group row">
 										<label for="foto_perfil" class="col-md-4 col-form-label text-md-right">Foto de Perfil</label>
 
@@ -28,30 +28,23 @@
 										</div>
 								</div>
 							
-								<?php if (isset($errores["name"])):?>
-									<div class="form-group">
-										<label for="name">Nombre</label>
-										<input type="text" class="form-control" id="name" name="name">
-										<span class="errores"><?= $errores["name"] ?></span>
-									</div>
-								<?php else :?>
+								
 									<div class="form-group">
 										<label for="name">Nombre</label>
 										<input type="text" class="form-control" id="name" name="name" value="{{$user->name}}">
 									</div>
-								<?php endif ?>
-								<?php if (isset($errores["lastName"])):?>
-									<div class="form-group">
-											<label for="lastName">Apellido</label>
-											<input type="text" class="form-control" id="lastName" name="lastName">
-											<span class="errores"><?= $errores["lastName"] ?></span>
-									</div>
-								<?php else: ?>
+									@if ($errors->has('name'))
+                    <span class="errores">{{ $errors->first('name') }}</span>
+                  @endif
+								
 									<div class="form-group">
 											<label for="lastName">Apellido</label>
 											<input type="text" class="form-control" id="lastName" name="lastName" value="{{$user->lastName}}">
 									</div>
-								<?php endif ?>
+									@if ($errors->has('lastName'))
+                    <span class="errores">{{ $errors->first('lastName') }}</span>
+                  @endif
+								
 									<div class="form-group">
 									<label for="gender">Género:</label><br>
 									<?php if(isset($errores["gender"]) && $errores["gender"]=="fem"):?>
@@ -73,19 +66,8 @@
 										<span class="errores"><?= $errores["gender"] ?></span>
 								<?php endif?>
 									</div>
+
 									<h3>Actualizá tu email:</h3>
-								<?php if(isset($errores["email"])):?>
-									<div class="form-group">
-										<label for="email">Email</label>
-										<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
-										<span class="errores"><?= $errores["email"] ?></span>
-									</div>
-									<div class="form-group">
-										<label for="email2">Repetí tu email</label>
-										<input type="email" class="form-control" id="email2" name="email2" aria-describedby="emailHelp">
-										<span class="errores"><?= $errores["email"] ?></span>
-									</div>
-								<?php else:?>
 									<div class="form-group">
 										<label for="email">Email</label>
 										<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" value="{{$user->email}}">
@@ -94,39 +76,34 @@
 										<label for="email2">Repetí tu email</label>
 										<input type="email" class="form-control" id="email2" name="email2" aria-describedby="emailHelp" value="{{$user->email}}">
 									</div>
-								<?php endif?>
+									@if ($errors->has('name'))
+                    <span class="errores">{{ $errors->first('name') }}</span>
+									@endif
+									
 								<h3>Actualizá tu contaseña:</h3>
-								<?php if(isset($errores["pass"])):?>
-									<div class="form-group">
-										<label for="pass">Contraseña actual</label>
-										<input type="password" class="form-control" id="pass" name="pass" maxlength="20" tabindex="17" autocapitalize="none" spellcheck="false" autocorrect="off" autocomplete="off" data-uid="5">
-										<span class="errores"><?= $errores["pass"] ?></span>
-									</div>
-									<div class="form-group">
-										<label for="pass2">Nueva contraseña</label>
-										<input type="password" class="form-control" id="pass2" name="pass2" maxlength="20" tabindex="17" autocapitalize="none" spellcheck="false" autocorrect="off" autocomplete="off" data-uid="5">
-										<span class="errores"><?= $errores["pass"] ?></span>
-									</div>
-									<div class="form-group">
-										<label for="pass3">Repetí la contraseña nueva</label>
-										<input type="password" class="form-control" id="pass3" name="pass3" maxlength="20" tabindex="17" autocapitalize="none" spellcheck="false" autocorrect="off" autocomplete="off" data-uid="5">
-										<span class="errores"><?= $errores["pass"] ?></span>
-									</div>
-								<?php else:?>
 									<div class="form-group">
 										<label for="pass">Contraseña actual</label>
 										<input type="password" class="form-control" id="pass" name="pass" maxlength="20" tabindex="17" autocapitalize="none" spellcheck="false" autocorrect="off" autocomplete="off" data-uid="5">
 									</div>
+									@if ($errors->has('pass'))
+                    <span class="errores">{{ $errors->first('pass') }}</span>
+                  @endif
 									<div class="form-group">
 										<label for="pass2">Nueva contraseña</label>
 										<input type="password" class="form-control" id="pass2" name="pass2" maxlength="20" tabindex="17" autocapitalize="none" spellcheck="false" autocorrect="off" autocomplete="off" data-uid="5">
 									</div>
+									@if ($errors->has('pass2'))
+                    <span class="errores">{{ $errors->first('pass2') }}</span>
+                  @endif
 									<div class="form-group">
 										<label for="pass3">Repetí la contraseña nueva</label>
 										<input type="password" class="form-control" id="pass3" name="pass3" maxlength="20" tabindex="17" autocapitalize="none" spellcheck="false" autocorrect="off" autocomplete="off" data-uid="5">
 									</div>
-								<?php endif?>
-									<button type="submit" name="register" value="register" class="btn-standard">Actualizar</button>
+									@if ($errors->has('pass3'))
+                    <span class="errores">{{ $errors->first('pass3') }}</span>
+                  @endif
+									<button type="submit" name="" value="" class="btn-standard">Actualizar</button>
+									{{-- @dd($errors->all()); --}}
 								</form>
 						</div>
 					</div>

@@ -22,13 +22,13 @@
      <section id="section-nosotros">
           <div class="nosotros">
               <p class="paragraph-us"><h1 class="title-princ">Nosotros</h1>¡Hablemos de cervezas! Somos una cervecería que hace <i>cerveza de garage</i>, ¿Qué significa esto? Somos un emprendimiento de dos amigos que les gusta el mundo de la cerveza, tenemos nuestra fábrica en nuestro garage.. y muchas ganas de aprender. Las recetas de todas nuestras birras se encuentran en linea. ¿Estas comenzando y tenes dudas? <a style="color:#ffbb37" href="#section-contact">No dudes en contactarnos</a></p>
-              <p class="dektop-us">Una vez al mes hacemos una visita guiada por la fábrica acompañada de una pequeña cocción de unos 20 litros, allí compartimos nuestros conocimientos, aprendemos de ustedes, y les contamos nuestra experiencia.</p>
+              <p class="desktop-us">Una vez al mes hacemos una visita guiada por la fábrica acompañada de una pequeña cocción de unos 20 litros, allí compartimos nuestros conocimientos, aprendemos de ustedes, y les contamos nuestra experiencia.</p>
           </div>
     </section>
 
       <!-- categorias o estilos de cerveza -->
       <section class="section-estilos" id="section-estilos">
-        <h1 class="title-princ">ESTILOS</h1>
+        <h1 class="title-princ">Productos</h1>
           <article class="estilo">
             <div class="photo-container">
                 <a href="/products?categories=1"><img class="photo" src="IMG/estilo-rubia.jpg" alt="rubia"></a>

@@ -61,7 +61,7 @@ class RegisterController extends Controller
         'max' => 'El campo :attribute no debe superar :max',
         'min' => 'El campo :attribute deber tener al menos :min caracteres.',
         'confirmed' => ':attribute no coinciden',
-
+        //'unique'=>
       ];
 
         return Validator::make($data, $rules, $messages);
@@ -76,7 +76,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     { 
     //Cargar Foto de Perfil:
-      $route = $data['foto_perfil']->store('public/foto_perfil');
+      $route = $data['foto_perfil']->store('/public/foto_perfil');
       $fileName = basename($route); //función de php;
       //dd($route, $fileName);
 

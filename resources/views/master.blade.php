@@ -11,7 +11,7 @@
   <!-- Title de Pagina-->
   <title>@yield('title')</title>
 
-  <!-- Styles -->
+	<!-- Styles -->
   <link href="/css/styles.css" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet"  integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link href="/IMG/iconbeer.ico" rel="icon">
@@ -31,32 +31,31 @@
             <ul class="menu">
               <li><a href="/">home</a></li>
               <li><a href="/#section-nosotros">nosotros</a></li>
-              <li><a href="/#section-estilos">estilos</a></li>
-              <li><a href="/products">productos</a></li>
+              <li><a href="/#section-estilos">beers</a></li>
+              {{-- <li><a href="/products">productos</a></li> --}}
               @if (!Auth::guest())
-                <li><a href="/cart">carrito</a></li>
+                <li><a href="/cart"><i class="fas fa-shopping-cart"></i></a></li>
                 <li><a href="/history">Mis compras</a></li>
               @endif
 							<!-- Authentication Links -->
 							@if (Auth::guest())
-              	<li><a class="itemNav" href="{{ route('login') }}">Login</a></li>
-              	<li><a class="itemNav" href="{{ route('register') }}">Register</a></li>
+              	<li class="derecha"><a class="itemNav" href="{{ route('login') }}">Login</a></li>
+              	<li class="derecha"><a class="itemNav" href="{{ route('register') }}">Register</a></li>
          			 @else
 							<li>
-								<a href="{{ route('logout') }}"
+								<a href="{{ route('logout') }}" 
 										onclick="event.preventDefault();
-														 document.getElementById('logout-form').submit();">
+														 document.getElementById('logout-form').submit();" class="dropdown-toggle" data-toggle="dropdown">
 										Logout
 								</a>
 								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 										{{ csrf_field() }}
 								</form>
 						</li>
-						<a href="/profile" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position:relative; padding-left:50px;">
-							<img src="/storage/foto_perfil/{{ Auth::user()->foto_perfil }}" class="avatar" alt="Img perfil usuario">mi perfil:
-							{{ Auth::user()->name }}<span class="caret"></span>
-					</a>
-
+						<li class="derecha"><a href="/profile" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position:relative; padding-left:50px;">
+							<img src="/storage/foto_perfil/{{ Auth::user()->foto_perfil }}" class="avatar" alt="Img perfil usuario"><span class="caret">mi perfil: 
+									{{ Auth::user()->name }}</span>
+					</a></li>
           @endif
             </ul>
         </div>
