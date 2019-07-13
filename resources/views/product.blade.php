@@ -19,6 +19,7 @@ Jirafa Product
         <section>
             <article>
               <h1 class="product-title"> {{$product->name}}</h1>
+
                 <p class="product-info">{{$product->description}}</p>
                 <p class="product-price">{{$product->price}}</p>
                 <a href="/product/{{$product->id}}/addtocart"><button class="btn-products">Cargar al carrito</button></a>
