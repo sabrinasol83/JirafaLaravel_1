@@ -23,8 +23,8 @@
                 <td>{{$items->name}}</td>
                 <!--<td>{{$items->description}}</td>-->
                 <td>{{$items->price}}</td>
-                <td>*</td>
-                <td>*</td>
+                <td>{{$items->cant}}</td>
+                <td>{{$items->price * $items->cant}}</td>
                 <td>
                     <form class="" action="/cart/{{$items->id}}" method="post">
                         @csrf
