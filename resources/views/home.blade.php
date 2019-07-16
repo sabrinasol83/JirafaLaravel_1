@@ -20,7 +20,7 @@
            <h2 class="ui-body u-width100pct u-maxWidth360 u-marginAuto u-marginBottom25 js-susiSubtitle">Antes de continuar con la visita a nuestra web, necesitamos saber si sos mayor de edad.</h2>
            <div class="u-width100pct u-maxWidth300 u-marginAuto u-xs-widthAuto js-loginOptions">
              <a href="#" id="yes">
-               <span>Si</span>
+               <span class="button-label">Si</span>
              </a>
              <a href="https://www.google.com" id="no">
                <span class="button-label">No</span>

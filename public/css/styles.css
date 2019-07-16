@@ -914,6 +914,13 @@ a:hover {
     vertical-align: baseline;
     white-space: normal;
  }
+ .button-label {
+     padding: 0 15px;
+ }
+ .button-label:hover {
+     border: solid 1px #faa914;
+     border-radius: 15px;
+ }
 
  .btn-close{
     text-align: right;
