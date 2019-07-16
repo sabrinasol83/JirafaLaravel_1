@@ -1,9 +1,37 @@
 @extends('master')
 
 @section('main')
-  <main>
-    <div id="contenido">
-      <h1 class="title-princ"> Historial de compras</h1>
+<main>
+    <div class="content">
+        <h1 class="title-princ"> Historial de compras</h1>
+        <table class="table">
+            <tr>
+                <th><i class="fas fa-shopping-bag"></th>
+                <th>Enviado el:</th>
+                <th>Productos:</th>
+            </tr>
+            @forelse ($history as $cart)
+            <tr>
+                <td>{{$cart->first()->cart_number}}</td>
+                <td>{{$cart->first()->updated_at}}</td>
+                <td>
+                    <ul>
+
+                        @foreach ($cart as $item)
+                        <li>{{$item->name}}</li>
+                        @endforeach
+                    </ul>
+                </td>
+            </tr>
+            @empty
+            <p>Su historial de compra está vacío</p>
+            @endforelse
+        </table>
+
+
+
+        <!-- VERSION ANTERIOR CON LISTA
+
         <ul>
           @forelse ($history as $cart)
           <li>
@@ -19,7 +47,9 @@
         @empty
         <p>Su historial de compra está vacío</p>
        @endforelse
-      </ul>
+     </ul>-->
+
+
     </div>
-  </main>
+</main>
 @endsection

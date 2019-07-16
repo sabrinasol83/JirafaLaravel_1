@@ -28,11 +28,11 @@ Products Jirafa Brew House
             @foreach ($category->products as $product)
             <article class="estilo">
                 <div class="beer-thumbnail">
-                    <img src="/storage/product/{{$product->beer_img}}" alt="cerveza">
+                    <a href="/product/{{$product->id}}"><img src="/storage/product/{{$product->beer_img}}" alt="cerveza"></a>
                 </div>
                 <div class="beer-info">
-                    <h2>{{$product->name}}</h2>
-                    <!--<p>{{$product->description}}</p>-->-->
+                    <a href="/product/{{$product->id}}"><h2>{{$product->name}}</h2></a>
+                    <!--<p>{{$product->description}}</p>-->
                     <h4 class="price">{{$product->price}}</h4>
                 </div>
                 <div class="beer-info">
