@@ -60,10 +60,10 @@ class CartController extends Controller
 
         $newItem = new Cart();
         //dd($newItem, $request);
-        // $newItem->name = $product->name;
-        // $newItem->description = $product->description;
-        // $newItem->price = $product->price;
-        // $newItem->beer_img = $product->beer_img;
+        $newItem->name = $product->name;
+         $newItem->description = $product->description;
+         $newItem->price = $product->price;
+         $newItem->beer_img = $product->beer_img;
         //$newItem->category_id = $product->category_id;
         $newItem->cant = $request->cant; //Vamos a hardcodear el número pero debería venir de un form o del array.
         $newItem->user_id = Auth::User()->id;

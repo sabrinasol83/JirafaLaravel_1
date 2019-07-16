@@ -235,6 +235,11 @@ h1 {
     min-height: 100%;
 }
 
+.content {
+  height: 100vh;
+  text-align: center;
+}
+
 .landing {
     z-index: 55;
 }
@@ -672,9 +677,14 @@ h1.product-title {
     padding-top: 80px;
 }
 
+div.product-info {
+  text-align: center;
+  margin: 0 auto;
+}
+
 p.product-info {
     box-sizing: border-box;
-    text-align: justify;
+    text-align: center;
     font-size: 18px;
     margin-left: 20vw;
     margin-right: 20vw;
@@ -805,8 +815,8 @@ a:hover {
     line-height: 1.4;
     margin-bottom: 30px;
   }
- 
- 
+
+
   .overlay {
     position: fixed;
     overflow: auto;
@@ -823,51 +833,51 @@ a:hover {
     margin: 0;
     border: 0;
  }
- 
+
  .uiScale {
     line-height: 20px;
     font-size: 16px;
  }
- 
+
  .u-textAlignCenter {
     text-align: center;
  }
- 
+
  .u-boxShadow2px10pxBlackLighter {
     -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.15);
     box-shadow: 0 2px 10px rgba(0,0,0,.15);
  }
- 
+
  .u-clearfix:after {
     clear: both;
  }
- 
+
  .u-borderRadius4 {
     -webkit-border-radius: 4px;
     border-radius: 4px;
  }
- 
+
  .u-backgroundNoRepeat {
     background-repeat: no-repeat;
  }
- 
+
  .u-backgroundColorWhite {
     background-color: #fff;
  }
- 
+
  .u-padding50 {
     padding: 50px;
  }
- 
+
  .u-sm-backgroundImageNone {
     background-image: none;
  }
- 
+
  .u-overflowHidden {
     overflow: hidden;
  }
- 
- 
+
+
  .uiScale-ui--regular .ui-body, .uiScale-ui--regular .ui-summary {
     --x-height-multiplier: 0.342;
     --baseline-multiplier: 0.22;
@@ -881,8 +891,8 @@ a:hover {
     -webkit-transform: translateY(-1.32px);
     transform: translateY(-1.32px);
  }
- 
- 
+
+
  .ui-body{
     --x-height-multiplier: 0.342;
     --baseline-multiplier: 0.22;
@@ -896,7 +906,7 @@ a:hover {
     -webkit-transform: translateY(-1.32px);
     transform: translateY(-1.32px);
  }
- 
+
  .button--chromeless, .button--link {
     border-width: 0;
     padding: 0;
@@ -904,7 +914,7 @@ a:hover {
     vertical-align: baseline;
     white-space: normal;
  }
- 
+
  .btn-close{
     text-align: right;
  }
@@ -1047,6 +1057,10 @@ a:hover {
     text-align: justify;
 }
 
+.beer-info input {
+  margin-bottom: 5vh;
+}
+
 h4.price {
     color: #fff;
     font-size: 2rem;
@@ -1079,6 +1093,15 @@ div.ver-products {
     border: 0px;
     border-radius: 10px;
     height: 50px;
+}
+
+input#cant{
+  width: 5vw;
+  text-align: center;
+  height: 50px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: solid 1px #f90;
 }
 
 /* CART TABLE MOBILE*/
