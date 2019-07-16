@@ -16,6 +16,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Migracion de Proyecto
+Route::get('/instalar', function(){
+  Artisan::call("storage:link");
+  Artisan::call("migrate");
+});
 
 Route::get('/category', 'CategoryController@index')->name('category.index');
 Route::get('/category/{product}', 'CategoryController@show')->name('category.show');
