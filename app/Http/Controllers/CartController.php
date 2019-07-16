@@ -20,7 +20,7 @@ class CartController extends Controller
         $openCart = Cart::all()->where('user_id', '=', Auth::User()->id)->where('status', '=', 0);
         //dd($openCart);
         $totalCart = $openCart->reduce(function($total, $cart){
-          $total += $cart->price;
+          $total += $cart->price*$cart->cant;
           return $total;
         });
 
@@ -51,6 +51,13 @@ class CartController extends Controller
     public function store(Request $request)
     {
         $product = Product::find($request->id);
+        $existe = Cart::where('name',$product->name)->where('user_id', Auth::User()->id)->where('status',0)->first();
+        if ($existe){
+          $existe->cant += $request->cant;
+          $existe->save();
+          return redirect('/products');
+        }
+
         $newItem = new Cart();
         //dd($newItem, $request);
         // $newItem->name = $product->name;
@@ -58,7 +65,6 @@ class CartController extends Controller
         // $newItem->price = $product->price;
         // $newItem->beer_img = $product->beer_img;
         //$newItem->category_id = $product->category_id;
-        $newItem->product_id= $request->id;
         $newItem->cant = $request->cant; //Vamos a hardcodear el número pero debería venir de un form o del array.
         $newItem->user_id = Auth::User()->id;
         //dd($newItem);
