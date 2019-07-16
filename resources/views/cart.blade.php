@@ -18,7 +18,7 @@
 
             <tr>
                 @forelse ($cart as $items)
-                <!--<td>{{$items->id}}</td>-->
+                <td>{{$items->id}}</td>
                 <td><img src="/storage/product/{{$items->beer_img}}" alt=""></td>
                 <td>{{$items->name}}</td>
                 <!--<td>{{$items->description}}</td>-->

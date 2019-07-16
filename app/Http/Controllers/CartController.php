@@ -18,7 +18,7 @@ class CartController extends Controller
     public function index()
     {
         $openCart = Cart::all()->where('user_id', '=', Auth::User()->id)->where('status', '=', 0);
-
+        //dd($openCart);
         $totalCart = $openCart->reduce(function($total, $cart){
           $total += $cart->price;
           return $total;
@@ -48,17 +48,18 @@ class CartController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($id)
+    public function store(Request $request)
     {
-        $product = Product::find($id);
+        $product = Product::find($request->id);
         $newItem = new Cart();
-
-        $newItem->name = $product->name;
-        $newItem->description = $product->description;
-        $newItem->price = $product->price;
-        $newItem->beer_img = $product->beer_img;
+        //dd($newItem, $request);
+        // $newItem->name = $product->name;
+        // $newItem->description = $product->description;
+        // $newItem->price = $product->price;
+        // $newItem->beer_img = $product->beer_img;
         //$newItem->category_id = $product->category_id;
-        $newItem->cant = 1; //Vamos a hardcodear el número pero debería venir de un form o del array.
+        $newItem->product_id= $request->id;
+        $newItem->cant = $request->cant; //Vamos a hardcodear el número pero debería venir de un form o del array.
         $newItem->user_id = Auth::User()->id;
         //dd($newItem);
 

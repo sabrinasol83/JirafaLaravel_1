@@ -47,11 +47,12 @@ INSERT INTO `beerdb`.`categories` (`id`, `name`, `description`, `landing_img`, `
 -- Table structure for table `carts`
 --
 CREATE  TABLE IF NOT EXISTS `beerdb`.`carts` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(191) NOT NULL,
-  `description` text NOT NULL,
-  `price` decimal(6,2) NOT NULL,
-  `beer_img` varchar(191) NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  -- `name` varchar(191) NOT NULL,
+  -- `description` text NOT NULL,
+  -- `price` decimal(6,2) NOT NULL,
+  -- `beer_img` varchar(191) NOT NULL,
+  `product_id` bigint(20) NOT NULL,
   `cant` int(11) DEFAULT NULL,
   `user_id` bigint(20) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 0,
@@ -65,19 +66,19 @@ CREATE  TABLE IF NOT EXISTS `beerdb`.`carts` (
 -- Dumping data for table `carts`
 --
 
-INSERT INTO `beerdb`.`carts` (`id`, `name`, `description`, `price`, `beer_img`, `cant`, `user_id`, `status`, `cart_number`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'DORTMUNDER GOLD® LAGER', 'Yes, it\s known for winning medals worldwide. But locally, it\s known as \"Dort,\" our flagship lager that humbly maintains its smooth, balanced (and charmingly unpretentious) ways.', '2806.53', 'eedc06f9ed956189d999e02d1b1b6b48.jpg', 1, 2, 0, NULL, '2019-07-01 01:57:05', '2019-07-01 01:57:21', '2019-07-01 01:57:21'),
-(2, 'ELIOT NESS® AMBER LAGER', 'Admittedly, it’s a bit of a paradox to name our Amber Lager for history’s most famous agent of prohibition. But it’s a smooth, malty (and dare we say, arresting?) paradox.', '2806.53', 'eedc06f9ed956189d999e02d1b1b6b48.jpg', 1, 2, 1, 1, '2019-07-01 01:57:11', '2019-07-01 01:57:24', NULL),
-(3, 'TURNTABLE PILS®', 'Flip that record and wax nostalgic about Ohio\s deep-cut music legacy with our refreshing pilsner. Consider this our reissue of a a classic style.', '2806.53', 'eedc06f9ed956189d999e02d1b1b6b48.jpg', 1, 2, 1, 2, '2019-07-02 16:26:01', '2019-07-02 16:26:11', NULL),
-(4, 'HOLY MOSES WHITE ALE®', 'Refreshment or bust! Orange peel, coriander, and chamomile stake their claim in this unfiltered White Ale, named for our fair city\s founder, Moses Cleaveland. FLAVOR: An intrepid crew of spices and orange peel blaze a trail to a refreshing, light-bodied landing.', '2849.24', 'dc332874ef33de4dd247b875c878994b.jpg', 1, 2, 0, NULL, '2019-07-02 16:39:54', '2019-07-02 16:39:54', NULL),
-(5, 'BURNING RIVER® PALE ALE', 'A toast to the Cuyahoga River Fire! For rekindling an appreciation of the Great Lakes region’s natural resources (like the malt and hops illuminating this fresh Pale Ale). FLAVOR: Crisp and bright, with refreshing flickers of citrus and pine that ignite the senses (not our local waterways).', '2806.53', 'eedc06f9ed956189d999e02d1b1b6b48.jpg', 1, 2, 0, NULL, '2019-07-02 16:40:09', '2019-07-02 16:40:09', NULL),
-(6, 'GREAT LAKES IPA', 'To celebrate our family of employee-owners, we crafted a lightly filtered, citrus-forward IPA that’s as bright and approachable as our crew. Hard work never tasted so good. FLAVOR: A dry-hopped, easy-drinking American IPA by the people, for the people (who happen to be our employee-owners!)', '3745.72', 'b1e9e8197a0c36fea01884f881c77f76.jpg', 1, 10, 1, 3, '2019-07-02 16:41:47', '2019-07-02 16:42:00', NULL),
-(7, 'COMMODORE PERRY® IPA', 'What’s this? A British-style IPA named after the man who defeated His Majesty’s Royal Navy in the War of 1812? Consider this a bold, hoppy (and mildly ironic) plunder of war. FLAVOR: Dry and well-hopped, with an arsenal of caramel malt flavors befitting the “Hero of Lake Erie.”', '2806.53', 'eedc06f9ed956189d999e02d1b1b6b48.jpg', 1, 10, 1, 4, '2019-07-02 17:08:08', '2019-07-02 17:11:58', NULL),
-(8, 'EDMUND FITZGERALD® PORTER', 'Robust and complex, our Porter is a bittersweet tribute to the legendary freighter’s fallen crew—taken too soon when the gales of November came early. FLAVOR: Brewed in memory of the sunken freighter, with rich roasted barley and bittersweet chocolate-coffee notes.', '2806.53', 'eedc06f9ed956189d999e02d1b1b6b48.jpg', 1, 10, 1, 4, '2019-07-02 17:08:19', '2019-07-02 17:11:58', NULL),
-(9, 'CONWAY\S IRISH ALE®', 'A pint for Pa Conway! Our co-owners’ grandfather and policeman who’d likely uphold that an Irish Ale with full-bodied caramel malt flavors is just the ticket. FLAVOR: Arrestingly smooth with a rap sheet of toasty biscuit and caramel malt flavors.', '2806.53', 'eedc06f9ed956189d999e02d1b1b6b48.jpg', 1, 10, 1, 4, '2019-07-02 17:11:48', '2019-07-02 17:11:58', NULL),
-(10, 'Facilis sint nostrum recusandae.', 'Sint qui autem id qui similique voluptatibus. Facilis dicta dolore reiciendis necessitatibus rerum veritatis labore.', '1638.98', '56d7966042638a5a3563d3cdff97d212.jpg', 1, 11, 1, 5, '2019-07-02 17:21:57', '2019-07-02 17:22:07', NULL),
-(11, 'DORTMUNDER GOLD® LAGER', 'Yes, it\s known for winning medals worldwide. But locally, it\s known as \"Dort,\" our flagship lager that humbly maintains its smooth, balanced (and charmingly unpretentious) ways.', '2806.53', 'eedc06f9ed956189d999e02d1b1b6b48.jpg', 1, 11, 0, NULL, '2019-07-02 18:00:06', '2019-07-02 18:00:06', NULL),
-(12, 'DORTMUNDER GOLD® LAGER', 'Yes, it\s known for winning medals worldwide. But locally, it\s known as \"Dort,\" our flagship lager that humbly maintains its smooth, balanced (and charmingly unpretentious) ways.', '2806.53', 'eedc06f9ed956189d999e02d1b1b6b48.jpg', 1, 11, 0, NULL, '2019-07-02 18:00:26', '2019-07-02 18:00:26', NULL);
+-- INSERT INTO `beerdb`.`carts` (`id`, `name`, `description`, `price`, `beer_img`, `cant`, `user_id`, `status`, `cart_number`, `created_at`, `updated_at`, `deleted_at`) VALUES
+-- (1, 'DORTMUNDER GOLD® LAGER', 'Yes, it\s known for winning medals worldwide. But locally, it\s known as \"Dort,\" our flagship lager that humbly maintains its smooth, balanced (and charmingly unpretentious) ways.', '2806.53', 'eedc06f9ed956189d999e02d1b1b6b48.jpg', 1, 2, 0, NULL, '2019-07-01 01:57:05', '2019-07-01 01:57:21', '2019-07-01 01:57:21'),
+-- (2, 'ELIOT NESS® AMBER LAGER', 'Admittedly, it’s a bit of a paradox to name our Amber Lager for history’s most famous agent of prohibition. But it’s a smooth, malty (and dare we say, arresting?) paradox.', '2806.53', 'eedc06f9ed956189d999e02d1b1b6b48.jpg', 1, 2, 1, 1, '2019-07-01 01:57:11', '2019-07-01 01:57:24', NULL),
+-- (3, 'TURNTABLE PILS®', 'Flip that record and wax nostalgic about Ohio\s deep-cut music legacy with our refreshing pilsner. Consider this our reissue of a a classic style.', '2806.53', 'eedc06f9ed956189d999e02d1b1b6b48.jpg', 1, 2, 1, 2, '2019-07-02 16:26:01', '2019-07-02 16:26:11', NULL),
+-- (4, 'HOLY MOSES WHITE ALE®', 'Refreshment or bust! Orange peel, coriander, and chamomile stake their claim in this unfiltered White Ale, named for our fair city\s founder, Moses Cleaveland. FLAVOR: An intrepid crew of spices and orange peel blaze a trail to a refreshing, light-bodied landing.', '2849.24', 'dc332874ef33de4dd247b875c878994b.jpg', 1, 2, 0, NULL, '2019-07-02 16:39:54', '2019-07-02 16:39:54', NULL),
+-- (5, 'BURNING RIVER® PALE ALE', 'A toast to the Cuyahoga River Fire! For rekindling an appreciation of the Great Lakes region’s natural resources (like the malt and hops illuminating this fresh Pale Ale). FLAVOR: Crisp and bright, with refreshing flickers of citrus and pine that ignite the senses (not our local waterways).', '2806.53', 'eedc06f9ed956189d999e02d1b1b6b48.jpg', 1, 2, 0, NULL, '2019-07-02 16:40:09', '2019-07-02 16:40:09', NULL),
+-- (6, 'GREAT LAKES IPA', 'To celebrate our family of employee-owners, we crafted a lightly filtered, citrus-forward IPA that’s as bright and approachable as our crew. Hard work never tasted so good. FLAVOR: A dry-hopped, easy-drinking American IPA by the people, for the people (who happen to be our employee-owners!)', '3745.72', 'b1e9e8197a0c36fea01884f881c77f76.jpg', 1, 10, 1, 3, '2019-07-02 16:41:47', '2019-07-02 16:42:00', NULL),
+-- (7, 'COMMODORE PERRY® IPA', 'What’s this? A British-style IPA named after the man who defeated His Majesty’s Royal Navy in the War of 1812? Consider this a bold, hoppy (and mildly ironic) plunder of war. FLAVOR: Dry and well-hopped, with an arsenal of caramel malt flavors befitting the “Hero of Lake Erie.”', '2806.53', 'eedc06f9ed956189d999e02d1b1b6b48.jpg', 1, 10, 1, 4, '2019-07-02 17:08:08', '2019-07-02 17:11:58', NULL),
+-- (8, 'EDMUND FITZGERALD® PORTER', 'Robust and complex, our Porter is a bittersweet tribute to the legendary freighter’s fallen crew—taken too soon when the gales of November came early. FLAVOR: Brewed in memory of the sunken freighter, with rich roasted barley and bittersweet chocolate-coffee notes.', '2806.53', 'eedc06f9ed956189d999e02d1b1b6b48.jpg', 1, 10, 1, 4, '2019-07-02 17:08:19', '2019-07-02 17:11:58', NULL),
+-- (9, 'CONWAY\S IRISH ALE®', 'A pint for Pa Conway! Our co-owners’ grandfather and policeman who’d likely uphold that an Irish Ale with full-bodied caramel malt flavors is just the ticket. FLAVOR: Arrestingly smooth with a rap sheet of toasty biscuit and caramel malt flavors.', '2806.53', 'eedc06f9ed956189d999e02d1b1b6b48.jpg', 1, 10, 1, 4, '2019-07-02 17:11:48', '2019-07-02 17:11:58', NULL),
+-- (10, 'Facilis sint nostrum recusandae.', 'Sint qui autem id qui similique voluptatibus. Facilis dicta dolore reiciendis necessitatibus rerum veritatis labore.', '1638.98', '56d7966042638a5a3563d3cdff97d212.jpg', 1, 11, 1, 5, '2019-07-02 17:21:57', '2019-07-02 17:22:07', NULL),
+-- (11, 'DORTMUNDER GOLD® LAGER', 'Yes, it\s known for winning medals worldwide. But locally, it\s known as \"Dort,\" our flagship lager that humbly maintains its smooth, balanced (and charmingly unpretentious) ways.', '2806.53', 'eedc06f9ed956189d999e02d1b1b6b48.jpg', 1, 11, 0, NULL, '2019-07-02 18:00:06', '2019-07-02 18:00:06', NULL),
+-- (12, 'DORTMUNDER GOLD® LAGER', 'Yes, it\s known for winning medals worldwide. But locally, it\s known as \"Dort,\" our flagship lager that humbly maintains its smooth, balanced (and charmingly unpretentious) ways.', '2806.53', 'eedc06f9ed956189d999e02d1b1b6b48.jpg', 1, 11, 0, NULL, '2019-07-02 18:00:26', '2019-07-02 18:00:26', NULL);
 
 
 

@@ -24,8 +24,15 @@ Jirafa Product
                 <p class="product-info">{{$product->description}}</p>
                 <p class="product-price">AR$ {{$product->price}}</p>
                 <div class="beer-info">
-                    <a href="/product/{{$product->id}}/addtocart"><button class="btn-products"><i class="fas fa-cart-plus"></i> Cargar</button></a>
+                <form action="/product/{{$product->id}}/addtocart" method="POST">
+                            {{ csrf_field() }}
+                    <label for="cant">
+                        <input type="number" value="" name="cant" id="cant">
+                    </label>    
+                <input type="hidden" name="id" value="{{$product->id}}">
+                    <a href="/product/{{$product->id}}/addtocart"><button type="submit" class="btn-products"><i class="fas fa-cart-plus"></i> Cargar</button></a>
                     <img src="/storage/app/public/product/{{$product->id}}" alt="">
+                </form>
                 </div>
             </article>
         </section>
