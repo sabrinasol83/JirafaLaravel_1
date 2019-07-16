@@ -794,6 +794,121 @@ a:hover {
 .desktop-us {
     visibility: hidden;
 }
+
+/* CONFIRMACION */
+
+.u-overflowHidden {
+    overflow: hidden;
+ }
+ .overlay-content{
+    color: rgba(0,0,0,.68);
+    line-height: 1.4;
+    margin-bottom: 30px;
+  }
+ 
+ 
+  .overlay {
+    position: fixed;
+    overflow: auto;
+    text-align: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    z-index: 900;
+    background-color: rgba(255,255,255,.97);
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+ }
+ 
+ .uiScale {
+    line-height: 20px;
+    font-size: 16px;
+ }
+ 
+ .u-textAlignCenter {
+    text-align: center;
+ }
+ 
+ .u-boxShadow2px10pxBlackLighter {
+    -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.15);
+    box-shadow: 0 2px 10px rgba(0,0,0,.15);
+ }
+ 
+ .u-clearfix:after {
+    clear: both;
+ }
+ 
+ .u-borderRadius4 {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+ }
+ 
+ .u-backgroundNoRepeat {
+    background-repeat: no-repeat;
+ }
+ 
+ .u-backgroundColorWhite {
+    background-color: #fff;
+ }
+ 
+ .u-padding50 {
+    padding: 50px;
+ }
+ 
+ .u-sm-backgroundImageNone {
+    background-image: none;
+ }
+ 
+ .u-overflowHidden {
+    overflow: hidden;
+ }
+ 
+ 
+ .uiScale-ui--regular .ui-body, .uiScale-ui--regular .ui-summary {
+    --x-height-multiplier: 0.342;
+    --baseline-multiplier: 0.22;
+    font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+    letter-spacing: -.02em;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0;
+    font-size: 19px;
+    line-height: 24px;
+    -webkit-transform: translateY(-1.32px);
+    transform: translateY(-1.32px);
+ }
+ 
+ 
+ .ui-body{
+    --x-height-multiplier: 0.342;
+    --baseline-multiplier: 0.22;
+    font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+    letter-spacing: -.02em;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0;
+    font-size: 19px;
+    line-height: 24px!;
+    -webkit-transform: translateY(-1.32px);
+    transform: translateY(-1.32px);
+ }
+ 
+ .button--chromeless, .button--link {
+    border-width: 0;
+    padding: 0;
+    text-align: left;
+    vertical-align: baseline;
+    white-space: normal;
+ }
+ 
+ .btn-close{
+    text-align: right;
+ }
+
 @media only screen and (min-width: 768px) {
     /* navbar */
 

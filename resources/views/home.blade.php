@@ -7,6 +7,32 @@
 <!--Aca esta el section main de home-->
 
 @section('main')
+<script src="js/main.js"></script>
+
+<div class="overlay overlay--light" data-action-scope="_actionscope_27">
+ <div class="overlay-dialog overlay-dialog--extended overlay-dialog--animate js-overlayDialog" tabindex="-1">
+   <div class="overlay-content">
+     <section class="uiScale uiScale-ui--regular uiScale-caption--regular u-backgroundColorWhite u-backgroundNoRepeat u-flexColumn u-height550 u-width900 u-borderBox u-borderRadius4 u-boxShadow2px10pxBlackLighter u-textAlignCenter u-padding50 u-xs-padding40 u-overflowHidden u-relative u-margin5 u-sm-width600 u-sm-heightAuto u-sm-backgroundImageNone u-xs-sizeFullWidth u-xs-absolute u-xs-top50pct u-xs-left50pct u-xs-transformXYNegative50pct u-xs-width95Pct u-xs-margin0" style="background-image: url(); background-size: 100%;
+     margin: 0 auto; position: fixed; top: 30vh; left: 14vw; width: 70vw;">
+       <div class="btn-close">
+       </div>
+           <h1 class="ui-brand2 u-width100pct u-maxWidth450 u-marginAuto u-marginBottom20 js-susiTitle">Confirmanos!</h1>
+           <h2 class="ui-body u-width100pct u-maxWidth360 u-marginAuto u-marginBottom25 js-susiSubtitle">Antes de continuar con la visita a nuestra web, necesitamos saber si sos mayor de edad.</h2>
+           <div class="u-width100pct u-maxWidth300 u-marginAuto u-xs-widthAuto js-loginOptions">
+             <a href="#" id="yes">
+               <span>Si</span>
+             </a>
+             <a href="https://www.google.com" id="no">
+               <span class="button-label">No</span>
+             </a>
+           </div>
+
+       </div>
+     </section>
+   </div>
+ </div>
+</div>
+
 
   <main>
     <div id="contenido">
